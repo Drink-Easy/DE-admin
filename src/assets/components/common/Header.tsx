@@ -1,6 +1,8 @@
 import styled, { ThemeProvider } from "styled-components";
-import theme, { flexCenter } from "../../style/theme";
+import theme from "../../style/theme";
 import { useNavigate } from "react-router-dom";
+import { flexCenter } from "../../../GlobalStyle";
+
 function Header() {
   const navigate = useNavigate();
   return (
