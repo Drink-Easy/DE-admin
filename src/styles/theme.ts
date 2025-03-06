@@ -1,11 +1,5 @@
 import { css } from "styled-components";
 
-export const flexCenter = css`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
 const colors = {
   purple_100: "#7E13B1",
 
@@ -19,7 +13,6 @@ const colors = {
 
 const fonts = {
   Title_1: css`
-    font-family: "Avenir Next";
     font-size: 3.125rem;
     font-style: normal;
     font-weight: 600;
@@ -28,7 +21,6 @@ const fonts = {
   `,
 
   Title_2: css`
-    font-family: "Avenir Next";
     font-size: 1.875rem;
     font-style: normal;
     font-weight: 400;
@@ -37,7 +29,6 @@ const fonts = {
   `,
 
   Body_1: css`
-    font-family: "Avenir Next";
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
