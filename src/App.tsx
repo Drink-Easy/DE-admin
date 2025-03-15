@@ -2,12 +2,12 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme";
-import MainPage from "./pages/MainPage";
-import LoginPage from "./pages/LoginPage";
+import MainPage from "./pages/home/MainPage";
+import LoginPage from "./pages/login/LoginPage";
 import ClassPage from "./pages/class/ClassPage";
 import ClassMemberPage from "./pages/class/ClassMemberPage";
 import WinePage from "./pages/wine/WinePage";
-import WineAddPage from "./pages/wine/WineAddPage";
+import AddWinePage from "./pages/wine/AddWinePage";
 import UserPage from "./pages/user/UserPage";
 import ReportPage from "./pages/report/ReportPage";
 import NoshowReportPage from "./pages/report/NoshowReportPage";
@@ -26,7 +26,7 @@ function App() {
           <Route path="/class/member" element={<ClassMemberPage />}></Route>
 
           <Route path="/wine" element={<WinePage />}></Route>
-          <Route path="/wine/add" element={<WineAddPage />}></Route>
+          <Route path="/wine/add" element={<AddWinePage />}></Route>
 
           <Route path="/user" element={<UserPage />}></Route>
 

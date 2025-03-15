@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
 
 export default function MainPage() {
   return (

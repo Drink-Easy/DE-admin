@@ -12,7 +12,9 @@ interface SideBarProps {
   menuItems: MenuItem[];
 }
 
-export default function SideBar({ title, menuItems }: SideBarProps) {
+export default function SideBar(props: SideBarProps) {
+  const { title, menuItems } = props;
+
   const location = useLocation(); // 현재 경로 가져오기
   const navigate = useNavigate();
   const pathname = location.pathname; // 현재 경로 문자열
@@ -57,6 +59,7 @@ const Container = styled.div`
 const Title = styled.p`
   ${({ theme }) => theme.fonts.Title_3};
   color: ${({ theme }) => theme.colors.black};
+  white-space: nowrap;
 `;
 
 const Line = styled.div`
@@ -76,9 +79,11 @@ const TextContainer = styled.div`
 const DeactivateText = styled.p`
   ${({ theme }) => theme.fonts.Body_3};
   color: ${({ theme }) => theme.colors.black};
+  white-space: nowrap;
 `;
 
 const ActivateText = styled.p`
   ${({ theme }) => theme.fonts.Body_2};
   color: ${({ theme }) => theme.colors.black};
+  white-space: nowrap;
 `;

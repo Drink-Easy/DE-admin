@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Header from "../../components/common/Header";
 import Footer from "../../components/common/Footer";
-import DetailHeader from "../../components/detail/DetailHeader";
-import SideBar from "../../components/detail/SideBar";
+import DetailHeader from "../../components/common/DetailHeader";
+import SideBar from "../../components/common/SideBar";
 
 export default function ReportPage() {
   return (
@@ -14,7 +14,7 @@ export default function ReportPage() {
           <SideBar
             title="신고 접수 관리"
             menuItems={[
-              { text: "접수된 댓글 신고 ", path: "/report" },
+              { text: "접수된 댓글 신고", path: "/report" },
               { text: "접수된 노쇼 신고", path: "/report/noshow" },
               { text: "처리완료 건", path: "/report/completed" },
             ]}
