@@ -33,4 +33,6 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   padding: 3.5rem 5rem 0rem 7.6rem;
+  display: flex;
+  text-align: center;
 `;
