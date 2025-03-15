@@ -12,6 +12,7 @@ export default function WineAddPage() {
         <DetailHeader />
         <ContentContainer>
           <SideBar
+            title="와인정보 관리"
             menuItems={[
               { text: "등록된 와인 리스트", path: "/wine" },
               { text: "와인 추가", path: "/wine/add" },

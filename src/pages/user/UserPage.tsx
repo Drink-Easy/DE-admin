@@ -4,7 +4,7 @@ import Footer from "../../components/common/Footer";
 import DetailHeader from "../../components/detail/DetailHeader";
 import SideBar from "../../components/detail/SideBar";
 
-export default function WinePage() {
+export default function UserPage() {
   return (
     <>
       <Container>
@@ -12,11 +12,8 @@ export default function WinePage() {
         <DetailHeader />
         <ContentContainer>
           <SideBar
-            title="와인정보 관리"
-            menuItems={[
-              { text: "등록된 와인 리스트", path: "/wine" },
-              { text: "와인 추가", path: "/wine/add" },
-            ]}
+            title="회원정보 관리"
+            menuItems={[{ text: "회원 조회", path: "/user" }]}
           />
         </ContentContainer>
       </Container>

@@ -8,10 +8,11 @@ interface MenuItem {
 }
 
 interface SideBarProps {
+  title: string;
   menuItems: MenuItem[];
 }
 
-export default function SideBar({ menuItems }: SideBarProps) {
+export default function SideBar({ title, menuItems }: SideBarProps) {
   const location = useLocation(); // 현재 경로 가져오기
   const navigate = useNavigate();
   const pathname = location.pathname; // 현재 경로 문자열
@@ -23,7 +24,7 @@ export default function SideBar({ menuItems }: SideBarProps) {
   return (
     <Container>
       <TextContainer>
-        <Title>타이틀</Title>
+        <Title>{title}</Title>
         <Line />
       </TextContainer>
       <TextContainer>
