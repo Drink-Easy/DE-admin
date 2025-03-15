@@ -19,8 +19,8 @@ export default function Footer() {
 }
 
 const Container = styled.div`
-  width: 100%;
-  padding: 3.3rem 72.1rem 2.4rem 7.6rem;
+  padding: 3.3rem 0rem 2.4rem 7.6rem;
+  background-color: ${({ theme }) => theme.colors.gray_200};
 `;
 
 const Logo = styled.p`

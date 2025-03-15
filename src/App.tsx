@@ -5,7 +5,8 @@ import theme from "./styles/theme";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
 import ClassPage from "./pages/ClassPage";
-import WinePage from "./pages/WinePage";
+import WinePage from "./pages/wine/WinePage";
+import WineAddPage from "./pages/wine/WineAddPage";
 import UserPage from "./pages/UserPage";
 import ReportPage from "./pages/ReportPage";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/class" element={<ClassPage />}></Route>
           <Route path="/wine" element={<WinePage />}></Route>
+          <Route path="/wine/add" element={<WineAddPage />}></Route>
           <Route path="/user" element={<UserPage />}></Route>
           <Route path="/report" element={<ReportPage />}></Route>
         </Routes>

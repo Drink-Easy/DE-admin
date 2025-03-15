@@ -47,6 +47,24 @@ const fonts = {
     line-height: 140%; /* 1.75rem */
     letter-spacing: -0.05rem;
   `,
+
+  // 사이드바 활성화 텍스트
+  Body_2: css`
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 21px */
+    letter-spacing: -0.0375rem;
+  `,
+
+  // 목록 텍스트, 사이드바 비활성화 텍스트
+  Body_3: css`
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 21px */
+    letter-spacing: -0.0375rem;
+  `,
 };
 
 const theme = {

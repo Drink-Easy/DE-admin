@@ -21,6 +21,7 @@ export default function Header() {
 const Container = styled.div`
   width: 100%;
   height: 13.8rem;
+  background-color: ${({ theme }) => theme.colors.black};
 `;
 
 const Content = styled.div`

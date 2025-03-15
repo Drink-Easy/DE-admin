@@ -34,6 +34,5 @@ const Container = styled.div`
 
 const Text = styled.p`
   ${({ theme }) => theme.fonts.Title_3};
-
   color: ${({ theme }) => theme.colors.black};
 `;

@@ -18,5 +18,5 @@ export default function ClassPage() {
 const Container = styled.div`
   width: 100%;
   height: 102.4rem;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
