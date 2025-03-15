@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-function Header() {
+export default function Header() {
   const navigate = useNavigate();
   return (
     <Container>
@@ -48,5 +48,3 @@ const Button = styled.div`
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
 `;
-
-export default Header;

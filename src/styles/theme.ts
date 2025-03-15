@@ -12,28 +12,40 @@ const colors = {
 };
 
 const fonts = {
+  // 로고
   Title_1: css`
-    font-size: 3.125rem;
+    font-size: 5rem;
     font-style: normal;
     font-weight: 600;
     line-height: 140%; /* 4.375rem */
-    letter-spacing: -0.07813rem;
+    letter-spacing: -0.125rem;
   `,
 
+  // 홈 헤더
   Title_2: css`
-    font-size: 1.875rem;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 2.625rem */
-    letter-spacing: -0.04688rem;
+    letter-spacing: -0.075rem;
   `,
 
+  // 상세페이지 헤더
+  Title_3: css`
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 28px */
+    letter-spacing: -0.05rem;
+  `,
+
+  // 푸터
   Body_1: css`
-    font-size: 1.25rem;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 1.75rem */
-    letter-spacing: -0.03125rem;
+    letter-spacing: -0.05rem;
   `,
 };
 
