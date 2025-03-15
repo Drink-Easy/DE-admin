@@ -12,7 +12,7 @@ export default function ClassMemberPage() {
         <DetailHeader />
         <ContentContainer>
           <SideBar
-            title="회원정보 관리"
+            title="클래스 관리"
             menuItems={[
               { text: "글 작성", path: "/class" },
               { text: "클래스 작성 멤버", path: "/class/member" },
