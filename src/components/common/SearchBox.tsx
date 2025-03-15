@@ -24,7 +24,6 @@ export default function SearchBox({ titles }: SearchBoxProps) {
 }
 
 const Container = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,14 +38,12 @@ const Container = styled.div`
 const SearchContainer = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   gap: 2.7rem;
 `;
 
 const SearchWrapper = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1.3rem;
