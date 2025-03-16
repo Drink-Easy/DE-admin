@@ -76,6 +76,7 @@ const TableCell = styled.div`
   text-align: center;
   justify-content: center;
   white-space: nowrap;
+  cursor: pointer;
   ${({ theme }) => theme.fonts.Body_3};
   color: ${({ theme }) => theme.colors.black};
 `;

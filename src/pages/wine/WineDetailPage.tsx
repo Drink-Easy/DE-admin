@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Header from "../../components/common/Header";
-import Footer from "../../components/common/Footer";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import Table from "../../components/common/Table";
@@ -14,7 +13,7 @@ export default function WineDetailPage() {
     {
       id: "102391",
       name: "루이 로드레 크리스탈 2014",
-      type: "스파클링,샴페인",
+      type: "스파클링, 샴페인",
       region: "상파뉴",
       country: "프랑스",
       date: "2024-09-03",
@@ -41,7 +40,6 @@ export default function WineDetailPage() {
           </InnerContainer>
         </ContentContainer>
       </Container>
-      <Footer />
     </>
   );
 }
@@ -61,6 +59,5 @@ const ContentContainer = styled.div`
 const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
   width: 100%;
 `;
