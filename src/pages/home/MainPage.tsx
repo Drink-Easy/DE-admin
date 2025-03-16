@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
 
-function MainPage() {
+export default function MainPage() {
   return (
     <>
       <Container>
@@ -17,7 +17,7 @@ function MainPage() {
 
 const Container = styled.div`
   width: 100%;
-  height: 106.2rem;
+  height: 102.4rem;
   background-color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -26,5 +26,3 @@ const Line = styled.div`
   width: 100%;
   height: 1px;
 `;
-
-export default MainPage;
