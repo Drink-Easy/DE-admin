@@ -20,7 +20,6 @@ export default function ClassMemberPage() {
           />
         </ContentContainer>
       </Container>
-      <Footer />
     </>
   );
 }

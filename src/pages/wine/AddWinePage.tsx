@@ -20,7 +20,6 @@ export default function WineAddPage() {
           />
         </ContentContainer>
       </Container>
-      <Footer />
     </>
   );
 }

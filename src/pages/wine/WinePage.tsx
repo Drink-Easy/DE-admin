@@ -7,20 +7,10 @@ import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
 import { Wine } from "../../interface/interface";
 import { useNavigate } from "react-router-dom";
+import { wineColumns } from "../../constants/constants";
 
 export default function WinePage() {
   const navigate = useNavigate();
-
-  const columns = [
-    "와인 번호",
-    "와인명",
-    "종류",
-    "지역",
-    "생산지(국가)",
-    "등록일",
-    "?",
-    "?",
-  ];
 
   const data: Wine[] = [
     {
@@ -64,11 +54,14 @@ export default function WinePage() {
           />
           <InnerContainer>
             <SearchBox titles={["와인명 :", "종류 :", "품종 :", "생산지 :"]} />
-            <Table columns={columns} data={data} onRowClick={handleRowClick} />
+            <Table
+              columns={wineColumns}
+              data={data}
+              onRowClick={handleRowClick}
+            />
           </InnerContainer>
         </ContentContainer>
       </Container>
-      <Footer />
     </>
   );
 }

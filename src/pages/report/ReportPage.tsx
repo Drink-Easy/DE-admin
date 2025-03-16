@@ -60,7 +60,6 @@ export default function ReportPage() {
           </InnerContainer>
         </ContentContainer>
       </Container>
-      <Footer />
     </>
   );
 }

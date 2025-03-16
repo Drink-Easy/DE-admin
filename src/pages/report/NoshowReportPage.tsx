@@ -60,7 +60,6 @@ export default function NoshowReportPage() {
           </InnerContainer>
         </ContentContainer>
       </Container>
-      <Footer />
     </>
   );
 }
