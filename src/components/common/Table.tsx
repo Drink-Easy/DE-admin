@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
-interface TableProps {
+interface TableProps<T> {
   columns: string[];
-  data: string[][];
+  data: T[];
+  onRowClick?: (id: string) => void;
 }
 
-export default function Table(props: TableProps) {
-  const { columns, data } = props;
-
+export default function Table<T extends { id: string }>({
+  columns,
+  data,
+  onRowClick,
+}: TableProps<T>) {
   return (
     <Container>
       <TableRow>
@@ -19,8 +22,8 @@ export default function Table(props: TableProps) {
       <TableBody>
         {data.map((row, rowIndex) => (
           <DataWrapper key={rowIndex}>
-            <TableRow>
-              {row.map((cell, cellIndex) => (
+            <TableRow onClick={() => onRowClick && onRowClick(row.id)}>
+              {Object.values(row).map((cell, cellIndex) => (
                 <TableCell key={cellIndex}>{cell}</TableCell>
               ))}
             </TableRow>

@@ -5,6 +5,7 @@ import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
+import { User } from "../../interface/interface";
 
 export default function UserPage() {
   const columns = [
@@ -17,27 +18,27 @@ export default function UserPage() {
     "정지 마감일",
     "?",
   ];
-  const data = [
-    [
-      "C011123",
-      "위승주",
-      "wsj11029",
-      "010-3655-5641",
-      "정상",
-      "2024-09-03",
-      "-",
-      "-",
-    ],
-    [
-      "C011123",
-      "위승주",
-      "wsj11029",
-      "010-3655-5641",
-      "정상",
-      "2024-09-03",
-      "-",
-      "-",
-    ],
+  const data: User[] = [
+    {
+      id: "C011123",
+      name: "위승주",
+      userId: "wsj11029",
+      phone: "010-3655-5641",
+      status: "정상",
+      joinDate: "2024-09-03",
+      banEndDate: "-",
+      action: "-",
+    },
+    {
+      id: "C011124",
+      name: "김철수",
+      userId: "kimcs99",
+      phone: "010-2222-3333",
+      status: "정상",
+      joinDate: "2024-07-01",
+      banEndDate: "-",
+      action: "-",
+    },
   ];
 
   return (
