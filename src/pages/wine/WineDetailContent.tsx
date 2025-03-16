@@ -64,6 +64,7 @@ export default function WineDetailContent({ data }: WineDetailProps) {
               onChange={handleChange}
               isEdited={isEdited.id}
               size="small"
+              placeholder="000000"
             />
             <InputBox
               name="name"
@@ -71,6 +72,7 @@ export default function WineDetailContent({ data }: WineDetailProps) {
               onChange={handleChange}
               isEdited={isEdited.name}
               size="large"
+              placeholder="이름 입력"
             />
             <TypeSelector>
               {typeOptions.map((type) => (
@@ -90,6 +92,7 @@ export default function WineDetailContent({ data }: WineDetailProps) {
               onChange={handleChange}
               isEdited={isEdited.region}
               size="large"
+              placeholder="지역 입력"
             />
             <InputBox
               name="country"
@@ -97,6 +100,7 @@ export default function WineDetailContent({ data }: WineDetailProps) {
               onChange={handleChange}
               isEdited={isEdited.country}
               size="large"
+              placeholder="생산지 입력"
             />
             <ImgContents>
               <Img />
@@ -116,8 +120,6 @@ const Container = styled.div`
   width: 100%;
 `;
 const Contents = styled.div`
-  margin-top: 3.65rem;
-  margin-left: 6.2rem;
   display: flex;
   align-items: flex-start;
 `;
@@ -160,6 +162,9 @@ const InputBox = styled.input<{
     border: 1px solid black;
     color: black;
     outline: none;
+  }
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.3);
   }
 `;
 const TypeSelector = styled.div`

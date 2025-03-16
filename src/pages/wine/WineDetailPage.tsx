@@ -36,7 +36,9 @@ export default function WineDetailPage() {
           />
           <InnerContainer>
             <Table columns={wineColumns} data={data} />
-            <WineDetailContent data={data} />
+            <StyledWrapper>
+              <WineDetailContent data={data} />
+            </StyledWrapper>
           </InnerContainer>
         </ContentContainer>
       </Container>
@@ -60,4 +62,8 @@ const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+`;
+const StyledWrapper = styled.div`
+  margin-top: 3.65rem;
+  margin-left: 6.2rem;
 `;
