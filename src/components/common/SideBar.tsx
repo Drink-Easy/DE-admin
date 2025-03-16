@@ -31,8 +31,23 @@ export default function SideBar(props: SideBarProps) {
       </TextContainer>
       <TextContainer>
         {menuItems.map((item: MenuItem, index: number) => {
-          const isActive = pathname === item.path;
+          const isWinePage = pathname.startsWith("/wine");
+          const isUserPage = pathname.startsWith("/user");
 
+          let isActive = pathname === item.path;
+
+          if (isWinePage) {
+            if (pathname === "/wine/add" && item.path === "/wine/add") {
+              isActive = true;
+            } else if (
+              (pathname === "/wine" || /^\/wine\/\d+$/.test(pathname)) &&
+              item.path === "/wine"
+            ) {
+              isActive = true;
+            }
+          } else if (isUserPage) {
+            isActive = pathname.startsWith("/user") && item.path === "/user";
+          }
           return (
             <BtnWrapper key={index} onClick={() => handleNavigation(item.path)}>
               {isActive ? (

@@ -12,6 +12,7 @@ import UserPage from "./pages/user/UserPage";
 import ReportPage from "./pages/report/ReportPage";
 import NoshowReportPage from "./pages/report/NoshowReportPage";
 import CompletedReportPage from "./pages/report/CompletedReportPage";
+import WineDetailPage from "./pages/wine/WineDetailPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/class/member" element={<ClassMemberPage />}></Route>
 
           <Route path="/wine" element={<WinePage />}></Route>
+          <Route path="/wine/:id" element={<WineDetailPage />}></Route>
           <Route path="/wine/add" element={<AddWinePage />}></Route>
 
           <Route path="/user" element={<UserPage />}></Route>
