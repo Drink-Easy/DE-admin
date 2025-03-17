@@ -1,10 +1,21 @@
 import styled from "styled-components";
 import Header from "../../components/common/Header";
-import Footer from "../../components/common/Footer";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
+import WineDetailContent from "./WineDetailContent";
+import { Wine } from "../../interface/interface";
 
 export default function WineAddPage() {
+  const defaultData: Wine = {
+    id: "",
+    name: "",
+    type: "",
+    region: "",
+    country: "",
+    date: "",
+    action1: "",
+    action2: "",
+  };
   return (
     <>
       <Container>
@@ -18,9 +29,11 @@ export default function WineAddPage() {
               { text: "와인 추가", path: "/wine/add" },
             ]}
           />
+          <StyledWrapper>
+            <WineDetailContent data={[defaultData]} />
+          </StyledWrapper>
         </ContentContainer>
       </Container>
-      <Footer />
     </>
   );
 }
@@ -33,4 +46,9 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   padding: 3.5rem 5rem 0rem 7.6rem;
+  display: flex;
+  align-items: flex-start;
+`;
+const StyledWrapper = styled.div`
+  margin-left: 5.7rem;
 `;

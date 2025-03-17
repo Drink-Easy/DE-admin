@@ -2,42 +2,25 @@ import styled from "styled-components";
 import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
-import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
-import { Wine } from "../../interface/interface";
-import { useNavigate } from "react-router-dom";
 import { wineColumns } from "../../constants/constants";
+import { Wine } from "../../interface/interface";
+import WineDetailContent from "./WineDetailContent";
 
-export default function WinePage() {
-  const navigate = useNavigate();
-
+export default function WineDetailPage() {
   const data: Wine[] = [
+    //추후 api로 개별 와인 조회 예정이라 정적 데이터
     {
       id: "102391",
       name: "루이 로드레 크리스탈 2014",
-      type: "스파클링,샴페인",
+      type: "스파클링, 샴페인",
       region: "상파뉴",
       country: "프랑스",
       date: "2024-09-03",
       action1: "?",
       action2: "?",
     },
-    {
-      id: "102392",
-      name: "샤또 마고 2015",
-      type: "레드 와인",
-      region: "보르도",
-      country: "프랑스",
-      date: "2024-09-03",
-      action1: "?",
-      action2: "?",
-    },
   ];
-
-  const handleRowClick = (id: string) => {
-    navigate(`/wine/${id}`);
-  };
-
   return (
     <>
       <Container>
@@ -52,19 +35,16 @@ export default function WinePage() {
             ]}
           />
           <InnerContainer>
-            <SearchBox titles={["와인명 :", "종류 :", "품종 :", "생산지 :"]} />
-            <Table
-              columns={wineColumns}
-              data={data}
-              onRowClick={handleRowClick}
-            />
+            <Table columns={wineColumns} data={data} />
+            <StyledWrapper>
+              <WineDetailContent data={data} />
+            </StyledWrapper>
           </InnerContainer>
         </ContentContainer>
       </Container>
     </>
   );
 }
-
 const Container = styled.div`
   width: 100%;
   height: 102.4rem;
@@ -81,6 +61,9 @@ const ContentContainer = styled.div`
 const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
   width: 100%;
+`;
+const StyledWrapper = styled.div`
+  margin-top: 3.65rem;
+  margin-left: 6.2rem;
 `;
