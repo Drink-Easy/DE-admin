@@ -11,26 +11,34 @@ export default function WineDetailContent({ data }: WineDetailProps) {
   const typeOptions = [
     "레드",
     "화이트",
-    "스파클링, 샴페인",
+    "스파클링",
     "로제",
     "주정 강화",
     "기타",
   ];
 
-  const [selectedType, setSelectedType] = useState<string>(wine.type);
+  const [selectedSort, setSelectedSort] = useState<string>(wine.sort);
 
   // 입력 필드 상태 및 편집 여부 상태 추가
   const [wineData, setWineData] = useState({
     id: wine.id,
     name: wine.name,
+    engName: wine.engName,
+    variety: wine.variety,
+    price: wine.price,
     region: wine.region,
     country: wine.country,
+    vivinoRating: wine.vivinoRating,
   });
   const [isEdited, setIsEdited] = useState({
     id: false,
     name: false,
+    engName: false,
+    variety: false,
+    price: false,
     region: false,
     country: false,
+    vivinoRating: false,
   });
 
   // input 클릭 핸들러
@@ -42,7 +50,7 @@ export default function WineDetailContent({ data }: WineDetailProps) {
 
   // 종류 버튼 클릭 핸들러
   const handleTypeSelect = (type: string) => {
-    setSelectedType(type);
+    setSelectedSort(type);
   };
 
   return (
@@ -52,9 +60,13 @@ export default function WineDetailContent({ data }: WineDetailProps) {
           <SideContent>
             <div>와인 번호</div>
             <div>와인명</div>
+            <div>와인명 (영문)</div>
+            <div>품종</div>
             <div>종류</div>
+            <div>가격</div>
             <div>지역</div>
             <div>생산지(국가)</div>
+            <div>비비노 평점</div>
             <div>이미지</div>
           </SideContent>
           <WineContent>
@@ -74,18 +86,41 @@ export default function WineDetailContent({ data }: WineDetailProps) {
               size="large"
               placeholder="이름 입력"
             />
+            <InputBox
+              name="engName"
+              value={wineData.engName}
+              onChange={handleChange}
+              isEdited={isEdited.engName}
+              size="large"
+              placeholder="이름 입력"
+            />
+            <InputBox
+              name="variety"
+              value={wineData.variety}
+              onChange={handleChange}
+              isEdited={isEdited.variety}
+              size="large"
+              placeholder="품종 입력"
+            />
             <TypeSelector>
               {typeOptions.map((type) => (
                 <TypeButton
                   key={type}
-                  selected={selectedType === type}
-                  size={type === "스파클링, 샴페인" ? "medium" : "small"}
+                  selected={selectedSort === type}
                   onClick={() => handleTypeSelect(type)}
                 >
                   {type}
                 </TypeButton>
               ))}
             </TypeSelector>
+            <InputBox
+              name="price"
+              value={wineData.price}
+              onChange={handleChange}
+              isEdited={isEdited.price}
+              size="large"
+              placeholder="금액 입력"
+            />
             <InputBox
               name="region"
               value={wineData.region}
@@ -101,6 +136,14 @@ export default function WineDetailContent({ data }: WineDetailProps) {
               isEdited={isEdited.country}
               size="large"
               placeholder="생산지 입력"
+            />
+            <InputBox
+              name="country"
+              value={wineData.vivinoRating}
+              onChange={handleChange}
+              isEdited={isEdited.vivinoRating}
+              size="large"
+              placeholder="평점 입력"
             />
             <ImgContents>
               <Img />
@@ -128,11 +171,11 @@ const SideContent = styled.div`
   flex-direction: column;
   width: 8.8rem;
   text-align: center;
-  gap: 3.1rem;
+  gap: 2.9rem;
   ${({ theme }) => theme.fonts.WineSide};
 
   div {
-    padding: 0.1rem 0;
+    height: 2.66rem;
   }
 `;
 const WineContent = styled.div`
@@ -174,12 +217,11 @@ const TypeSelector = styled.div`
 
 const TypeButton = styled.button<{
   selected: boolean;
-  size: "small" | "medium";
 }>`
   border-radius: 5px;
   cursor: pointer;
 
-  width: ${({ size }) => (size === "small" ? "10rem" : "13.2rem")};
+  width: 10rem;
   ${({ theme }) => theme.fonts.WineDetailContents};
   border: 1px solid
     ${({ selected }) => (selected ? "black" : "rgba(0, 0, 0, 0.3)")};
