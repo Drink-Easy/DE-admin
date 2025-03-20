@@ -184,7 +184,9 @@ const WineContent = styled.div`
   flex-direction: column;
   gap: 2.9rem;
 `;
-const InputBox = styled.input<{
+const InputBox = styled.input.withConfig({
+  shouldForwardProp: (prop) => prop !== "isEdited",
+})<{
   size: "small" | "large";
   isEdited: boolean;
 }>`
