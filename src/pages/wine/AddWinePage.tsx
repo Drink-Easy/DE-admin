@@ -9,12 +9,16 @@ export default function WineAddPage() {
   const defaultData: Wine = {
     id: "",
     name: "",
-    type: "",
+    engName: "",
+    variety: "",
+    sort: "",
+    price: "",
     region: "",
     country: "",
     date: "",
-    action1: "",
-    action2: "",
+    vivinoRating: "",
+    action1: "?",
+    action2: "?",
   };
   return (
     <>
