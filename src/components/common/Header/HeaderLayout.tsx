@@ -1,23 +1,24 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
-export default function Header() {
-  const navigate = useNavigate();
+interface HeaderLayoutProps {
+  logoText: string;
+  onLogoClick: () => void;
+  children?: React.ReactNode;
+}
+export default function HeaderLayout({
+  logoText,
+  onLogoClick,
+  children,
+}: HeaderLayoutProps) {
   return (
     <Container>
       <Content>
-        <Logo onClick={() => navigate("/")}>Drinki G</Logo>
-        <Functions>
-          <Button onClick={() => navigate("/")}>Home</Button>
-          <Button>Projects</Button>
-          <Button>Help Center</Button>
-          <Button onClick={() => navigate("/login")}>Login</Button>
-        </Functions>
+        <Logo onClick={onLogoClick}>{logoText}</Logo>
+        <Functions>{children}</Functions>
       </Content>
     </Container>
   );
 }
-
 const Container = styled.div`
   width: 100%;
   height: 13.8rem;
@@ -42,10 +43,4 @@ const Functions = styled.div`
   display: flex;
   gap: 6.2rem;
   justify-content: flex-end;
-`;
-
-const Button = styled.div`
-  ${({ theme }) => theme.fonts.Title_2};
-  color: ${({ theme }) => theme.colors.white};
-  cursor: pointer;
 `;

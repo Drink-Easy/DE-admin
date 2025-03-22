@@ -1,44 +1,37 @@
 import styled from "styled-components";
-import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
-import { Wine } from "../../interface/interface";
+import { TitledWine } from "../../interface/interface";
 import { useNavigate } from "react-router-dom";
 import { wineColumns } from "../../constants/constants";
+import AdminHeader from "../../components/common/Header/AdminHeader";
 
 export default function WinePage() {
   const navigate = useNavigate();
 
-  const data: Wine[] = [
+  const titleData: TitledWine[] = [
+    //추후 api로 개별 와인 조회 예정이라 정적 데이터
     {
       id: "102391",
       name: "루이 로드레 크리스탈 2014",
-      engName: "Carte Blanche, UV Vinyard Chardonnay",
-      variety: "샤르도네 100%",
       sort: "스파클링",
-      price: "450000",
       region: "상파뉴",
       country: "프랑스",
       date: "2024-09-03",
-      vivinoRating: "4.4",
-      action1: "?",
-      action2: "?",
+      action1: "-",
+      action2: "-",
     },
     {
       id: "102391",
       name: "루이 로드레 크리스탈 2014",
-      engName: "Carte Blanche, UV Vinyard Chardonnay",
-      variety: "샤르도네 100%",
       sort: "스파클링",
-      price: "450000",
       region: "상파뉴",
       country: "프랑스",
       date: "2024-09-03",
-      vivinoRating: "4.4",
-      action1: "?",
-      action2: "?",
+      action1: "-",
+      action2: "-",
     },
   ];
 
@@ -49,7 +42,7 @@ export default function WinePage() {
   return (
     <>
       <Container>
-        <Header />
+        <AdminHeader />
         <DetailHeader />
         <ContentContainer>
           <SideBar
@@ -63,7 +56,7 @@ export default function WinePage() {
             <SearchBox titles={["와인명 :", "종류 :", "품종 :", "생산지 :"]} />
             <Table
               columns={wineColumns}
-              data={data}
+              data={titleData}
               onRowClick={handleRowClick}
             />
           </InnerContainer>
