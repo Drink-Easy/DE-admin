@@ -103,7 +103,7 @@ const SideContent = styled.div`
   width: 8.8rem;
   text-align: center;
   gap: 2.9rem;
-  ${({ theme }) => theme.fonts.WineSide};
+  ${({ theme }) => theme.fonts.Body_3};
 
   div {
     height: 2.66rem;
@@ -132,7 +132,7 @@ const InputBox = styled.input`
   text-align: center;
 
   border: 1px solid rgba(0, 0, 0, 0.3);
-  ${({ theme }) => theme.fonts.WineDetailContents};
+  ${({ theme }) => theme.fonts.Body_3};
   color: rgba(0, 0, 0, 0.3);
 
   &:focus {
@@ -156,7 +156,7 @@ const TypeButton = styled.button<{
   cursor: pointer;
 
   width: 10rem;
-  ${({ theme }) => theme.fonts.WineDetailContents};
+  ${({ theme }) => theme.fonts.Body_3};
   border: 1px solid
     ${({ selected }) => (selected ? "black" : "rgba(0, 0, 0, 0.3)")};
   color: ${({ selected }) => (selected ? "black" : "rgba(0, 0, 0, 0.3)")};
@@ -165,7 +165,7 @@ const BtnContainer = styled.div`
   display: flex;
   margin-top: 5rem;
   margin-left: 39.7rem;
-  ${({ theme }) => theme.fonts.WineDetailBtn};
+  ${({ theme }) => theme.fonts.Body_3};
 `;
 const RegisterBtn = styled.div`
   width: 13.7rem;

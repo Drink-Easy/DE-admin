@@ -19,6 +19,21 @@ export default function WineDetailContent() {
     action2: "-",
   };
 
+  // const defaultData: Wine = { wineAdd에서 적용해보는 더미 데이터
+  //     id: "",
+  //     name: "",
+  //     engName: "",
+  //     variety: "",
+  //     sort: "",
+  //     price: "",
+  //     region: "",
+  //     country: "",
+  //     date: "",
+  //     vivinoRating: "",
+  //     action1: "?",
+  //     action2: "?",
+  //   };
+
   const typeOptions = [
     "레드",
     "화이트",
@@ -183,7 +198,7 @@ const SideContent = styled.div`
   width: 8.8rem;
   text-align: center;
   gap: 2.9rem;
-  ${({ theme }) => theme.fonts.WineSide};
+  ${({ theme }) => theme.fonts.Body_3};
 
   div {
     height: 2.66rem;
@@ -211,7 +226,7 @@ const InputBox = styled.input.withConfig({
   width: ${({ size }) => (size === "small" ? "10rem" : "34.7rem")};
   border: 1px solid
     ${({ isEdited }) => (isEdited ? "black" : "rgba(0, 0, 0, 0.3)")};
-  ${({ theme }) => theme.fonts.WineDetailContents};
+  ${({ theme }) => theme.fonts.Body_3};
   color: ${({ isEdited }) => (isEdited ? "black" : "rgba(0, 0, 0, 0.3)")};
 
   &:focus {
@@ -235,7 +250,7 @@ const TypeButton = styled.button<{
   cursor: pointer;
 
   width: 10rem;
-  ${({ theme }) => theme.fonts.WineDetailContents};
+  ${({ theme }) => theme.fonts.Body_3};
   border: 1px solid
     ${({ selected }) => (selected ? "black" : "rgba(0, 0, 0, 0.3)")};
   color: ${({ selected }) => (selected ? "black" : "rgba(0, 0, 0, 0.3)")};
@@ -255,13 +270,13 @@ const ModifyBtn = styled.button`
   border-radius: 5px;
   border: 1px solid #000;
   margin-left: 1.3rem;
-  ${({ theme }) => theme.fonts.WineDetailBtn};
+  ${({ theme }) => theme.fonts.Body_3};
 `;
 const BtnContainer = styled.div`
   display: flex;
   margin-top: 5rem;
   margin-left: 39.7rem;
-  ${({ theme }) => theme.fonts.WineDetailBtn};
+  ${({ theme }) => theme.fonts.Body_3};
 `;
 const RegisterBtn = styled.div`
   width: 13.7rem;

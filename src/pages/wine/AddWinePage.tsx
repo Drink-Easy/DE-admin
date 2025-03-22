@@ -3,23 +3,8 @@ import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import WineDetailContent from "./WineDetailContent";
-import { Wine } from "../../interface/interface";
 
 export default function WineAddPage() {
-  const defaultData: Wine = {
-    id: "",
-    name: "",
-    engName: "",
-    variety: "",
-    sort: "",
-    price: "",
-    region: "",
-    country: "",
-    date: "",
-    vivinoRating: "",
-    action1: "?",
-    action2: "?",
-  };
   return (
     <>
       <Container>
@@ -34,7 +19,7 @@ export default function WineAddPage() {
             ]}
           />
           <StyledWrapper>
-            <WineDetailContent data={[defaultData]} />
+            <WineDetailContent />
           </StyledWrapper>
         </ContentContainer>
       </Container>
