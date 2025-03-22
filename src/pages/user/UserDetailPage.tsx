@@ -5,6 +5,7 @@ import SideBar from "../../components/common/SideBar";
 import Table from "../../components/common/Table";
 import { User } from "../../interface/interface";
 import { userColumns } from "../../constants/constants";
+import UserDetailContent from "./UserDetailContent";
 
 export default function UserDetailPage() {
   //추후 api로 개별 유저 조회 예정이라 정적 데이터
@@ -33,7 +34,7 @@ export default function UserDetailPage() {
           <InnerContainer>
             <Table columns={userColumns} data={data} />
             <StyledWrapper>
-              {/* <WineDetailContent data={data} /> */}
+              <UserDetailContent />
             </StyledWrapper>
           </InnerContainer>
         </ContentContainer>

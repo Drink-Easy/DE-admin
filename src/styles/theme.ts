@@ -68,7 +68,7 @@ const fonts = {
 
   // 와인 상세페이지 사이드 텍스트
   WineSide: css`
-    font-size: 15px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 21px */
@@ -77,7 +77,7 @@ const fonts = {
   // 와인 상세 내용 텍스트
   WineDetailContents: css`
     color: rgba(0, 0, 0, 0.3);
-    font-size: 15px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 21px */
@@ -86,7 +86,7 @@ const fonts = {
   // 와인 상세 내용 버튼
   WineDetailBtn: css`
     color: #000;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 21px */

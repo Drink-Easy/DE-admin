@@ -32,3 +32,9 @@ export interface User {
   banEndDate: string;
   action: string;
 }
+export interface UserDetail {
+  id: string;
+  status: string;
+  activityDate: string;
+  gatheringDate: string;
+}
