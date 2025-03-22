@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import Table from "../../components/common/Table";
 import { wineColumns } from "../../constants/constants";
 import { TitledWine } from "../../interface/interface";
 import WineDetailContent from "./WineDetailContent";
+import AdminHeader from "../../components/AdminHeader";
 
 export default function WineDetailPage() {
   const titleData: TitledWine[] = [
@@ -25,7 +25,7 @@ export default function WineDetailPage() {
   return (
     <>
       <Container>
-        <Header />
+        <AdminHeader />
         <DetailHeader />
         <ContentContainer>
           <SideBar

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
@@ -7,6 +6,7 @@ import Table from "../../components/common/Table";
 import { TitledWine } from "../../interface/interface";
 import { useNavigate } from "react-router-dom";
 import { wineColumns } from "../../constants/constants";
+import AdminHeader from "../../components/AdminHeader";
 
 export default function WinePage() {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ export default function WinePage() {
   return (
     <>
       <Container>
-        <Header />
+        <AdminHeader />
         <DetailHeader />
         <ContentContainer>
           <SideBar

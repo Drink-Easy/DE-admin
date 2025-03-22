@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
 import { User } from "../../interface/interface";
+import AdminHeader from "../../components/AdminHeader";
 
 export default function NoshowReportPage() {
   const columns = [
@@ -43,7 +43,7 @@ export default function NoshowReportPage() {
   return (
     <>
       <Container>
-        <Header />
+        <AdminHeader />
         <DetailHeader />
         <ContentContainer>
           <SideBar

@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import WineDetailContent from "./WineDetailContent";
+import AdminHeader from "../../components/AdminHeader";
 
 export default function WineAddPage() {
   return (
     <>
       <Container>
-        <Header />
+        <AdminHeader />
         <DetailHeader />
         <ContentContainer>
           <SideBar

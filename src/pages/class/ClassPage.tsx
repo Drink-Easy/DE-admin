@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
+import AdminHeader from "../../components/AdminHeader";
 
 export default function ClassPage() {
   return (
     <>
       <Container>
-        <Header />
+        <AdminHeader />
         <DetailHeader />
         <ContentContainer>
           <SideBar
