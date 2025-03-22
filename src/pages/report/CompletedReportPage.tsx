@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Header from "../../components/common/Header";
-import Footer from "../../components/common/Footer";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
+import { User } from "../../interface/interface";
 
 export default function CompletedReportPage() {
   const columns = [
@@ -17,27 +17,27 @@ export default function CompletedReportPage() {
     "처리 완료일",
     "처리결과",
   ];
-  const data = [
-    [
-      "001",
-      "2024-11-13",
-      "wsj11029",
-      "oyatplum",
-      "비속어 신고",
-      "처리 전",
-      "-",
-      "-",
-    ],
-    [
-      "001",
-      "2024-11-13",
-      "wsj11029",
-      "oyatplum",
-      "비속어 신고",
-      "처리 전",
-      "-",
-      "-",
-    ],
+  const data: User[] = [
+    {
+      id: "C011123",
+      name: "위승주",
+      userId: "wsj11029",
+      phone: "010-3655-5641",
+      status: "정상",
+      joinDate: "2024-09-03",
+      banEndDate: "-",
+      action: "-",
+    },
+    {
+      id: "C011124",
+      name: "김철수",
+      userId: "kimcs99",
+      phone: "010-2222-3333",
+      status: "정상",
+      joinDate: "2024-07-01",
+      banEndDate: "-",
+      action: "-",
+    },
   ];
 
   return (
