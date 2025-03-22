@@ -2,11 +2,22 @@ import styled from "styled-components";
 import { Wine } from "../../interface/interface";
 import { useState } from "react";
 
-interface WineDetailProps {
-  data: Wine[];
-}
-export default function WineDetailContent({ data }: WineDetailProps) {
-  const wine = data[0];
+export default function WineDetailContent() {
+  //추후 api로 개별 와인 조회 예정이라 정적 데이터 -> id 조회 api 예상/예정
+  const wine: Wine = {
+    id: "102391",
+    name: "루이 로드레 크리스탈 2014",
+    engName: "Carte Blanche, UV Vinyard Chardonnay",
+    variety: "샤르도네 100%",
+    sort: "스파클링",
+    price: "450000",
+    region: "상파뉴",
+    country: "프랑스",
+    date: "2024-09-03",
+    vivinoRating: "4.4",
+    action1: "-",
+    action2: "-",
+  };
 
   const typeOptions = [
     "레드",

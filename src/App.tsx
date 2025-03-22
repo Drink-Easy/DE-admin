@@ -13,6 +13,7 @@ import ReportPage from "./pages/report/ReportPage";
 import NoshowReportPage from "./pages/report/NoshowReportPage";
 import CompletedReportPage from "./pages/report/CompletedReportPage";
 import WineDetailPage from "./pages/wine/WineDetailPage";
+import UserDetailPage from "./pages/user/UserDetailPage";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/wine/add" element={<AddWinePage />}></Route>
 
           <Route path="/user" element={<UserPage />}></Route>
+          <Route path="/user/:id" element={<UserDetailPage />}></Route>
 
           <Route path="/report" element={<ReportPage />}></Route>
           <Route path="/report/noshow" element={<NoshowReportPage />}></Route>

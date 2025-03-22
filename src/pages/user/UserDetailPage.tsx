@@ -2,15 +2,12 @@ import styled from "styled-components";
 import Header from "../../components/common/Header";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
-import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
 import { User } from "../../interface/interface";
-import { useNavigate } from "react-router-dom";
 import { userColumns } from "../../constants/constants";
 
-export default function UserPage() {
-  const navigate = useNavigate();
-
+export default function UserDetailPage() {
+  //추후 api로 개별 유저 조회 예정이라 정적 데이터
   const data: User[] = [
     {
       id: "C011123",
@@ -22,22 +19,7 @@ export default function UserPage() {
       banEndDate: "-",
       action: "-",
     },
-    {
-      id: "C011124",
-      name: "김철수",
-      userId: "kimcs99",
-      phone: "010-2222-3333",
-      status: "정상",
-      joinDate: "2024-07-01",
-      banEndDate: "-",
-      action: "-",
-    },
   ];
-
-  const handleRowClick = (id: string) => {
-    navigate(`/user/${id}`);
-  };
-
   return (
     <>
       <Container>
@@ -49,19 +31,16 @@ export default function UserPage() {
             menuItems={[{ text: "회원 조회", path: "/user" }]}
           />
           <InnerContainer>
-            <SearchBox titles={["회원명 :", "회원 ID :"]} />
-            <Table
-              columns={userColumns}
-              data={data}
-              onRowClick={handleRowClick}
-            />
+            <Table columns={userColumns} data={data} />
+            <StyledWrapper>
+              {/* <WineDetailContent data={data} /> */}
+            </StyledWrapper>
           </InnerContainer>
         </ContentContainer>
       </Container>
     </>
   );
 }
-
 const Container = styled.div`
   width: 100%;
   height: 102.4rem;
@@ -78,6 +57,9 @@ const ContentContainer = styled.div`
 const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
   width: 100%;
+`;
+const StyledWrapper = styled.div`
+  margin-top: 3.65rem;
+  margin-left: 6.2rem;
 `;

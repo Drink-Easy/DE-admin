@@ -20,8 +20,8 @@ export default function WinePage() {
       region: "상파뉴",
       country: "프랑스",
       date: "2024-09-03",
-      action1: "?",
-      action2: "?",
+      action1: "-",
+      action2: "-",
     },
     {
       id: "102391",
@@ -30,8 +30,8 @@ export default function WinePage() {
       region: "상파뉴",
       country: "프랑스",
       date: "2024-09-03",
-      action1: "?",
-      action2: "?",
+      action1: "-",
+      action2: "-",
     },
   ];
 
