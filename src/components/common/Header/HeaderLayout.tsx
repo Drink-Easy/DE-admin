@@ -1,15 +1,20 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
-export default function AdminHeader() {
-  const navigate = useNavigate();
+interface HeaderLayoutProps {
+  logoText: string;
+  onLogoClick: () => void;
+  children?: React.ReactNode;
+}
+export default function HeaderLayout({
+  logoText,
+  onLogoClick,
+  children,
+}: HeaderLayoutProps) {
   return (
     <Container>
       <Content>
-        <Logo onClick={() => navigate("/class")}>관리자 페이지</Logo>
-        <Functions>
-          <Button onClick={() => navigate("/")}>Log out</Button>
-        </Functions>
+        <Logo onClick={onLogoClick}>{logoText}</Logo>
+        <Functions>{children}</Functions>
       </Content>
     </Container>
   );
@@ -38,10 +43,4 @@ const Functions = styled.div`
   display: flex;
   gap: 6.2rem;
   justify-content: flex-end;
-`;
-
-const Button = styled.div`
-  ${({ theme }) => theme.fonts.Title_2};
-  color: ${({ theme }) => theme.colors.white};
-  cursor: pointer;
 `;

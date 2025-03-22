@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
-import AdminHeader from "../../components/AdminHeader";
+import AdminHeader from "../../components/common/Header/AdminHeader";
 
 export default function ClassMemberPage() {
   return (

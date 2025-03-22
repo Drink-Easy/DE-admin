@@ -4,7 +4,7 @@ import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
 import { User } from "../../interface/interface";
-import AdminHeader from "../../components/AdminHeader";
+import AdminHeader from "../../components/common/Header/AdminHeader";
 
 export default function NoshowReportPage() {
   const columns = [

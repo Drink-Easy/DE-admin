@@ -179,7 +179,7 @@ export default function WineDetailContent() {
         </Contents>
         <BtnContainer>
           <RegisterBtn>등록</RegisterBtn>
-          <CancleBtn>취소</CancleBtn>
+          <CancelBtn>취소</CancelBtn>
         </BtnContainer>
       </Container>
     </>
@@ -287,7 +287,7 @@ const RegisterBtn = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const CancleBtn = styled.div`
+const CancelBtn = styled.div`
   width: 7rem;
   height: 3rem;
   border: 1px solid #000;

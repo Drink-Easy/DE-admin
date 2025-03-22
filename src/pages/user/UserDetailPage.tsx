@@ -5,7 +5,7 @@ import Table from "../../components/common/Table";
 import { User } from "../../interface/interface";
 import { userColumns } from "../../constants/constants";
 import UserDetailContent from "./UserDetailContent";
-import AdminHeader from "../../components/AdminHeader";
+import AdminHeader from "../../components/common/Header/AdminHeader";
 
 export default function UserDetailPage() {
   //추후 api로 개별 유저 조회 예정이라 정적 데이터

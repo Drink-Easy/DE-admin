@@ -5,7 +5,7 @@ import Table from "../../components/common/Table";
 import { wineColumns } from "../../constants/constants";
 import { TitledWine } from "../../interface/interface";
 import WineDetailContent from "./WineDetailContent";
-import AdminHeader from "../../components/AdminHeader";
+import AdminHeader from "../../components/common/Header/AdminHeader";
 
 export default function WineDetailPage() {
   const titleData: TitledWine[] = [

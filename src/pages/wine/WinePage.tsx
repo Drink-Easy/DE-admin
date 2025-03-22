@@ -6,7 +6,7 @@ import Table from "../../components/common/Table";
 import { TitledWine } from "../../interface/interface";
 import { useNavigate } from "react-router-dom";
 import { wineColumns } from "../../constants/constants";
-import AdminHeader from "../../components/AdminHeader";
+import AdminHeader from "../../components/common/Header/AdminHeader";
 
 export default function WinePage() {
   const navigate = useNavigate();
