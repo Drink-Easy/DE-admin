@@ -1,5 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { QueryClient, QueryClientProvider } from "react-query";
 import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme";
 import MainPage from "./pages/home/MainPage";
@@ -15,34 +16,38 @@ import CompletedReportPage from "./pages/report/CompletedReportPage";
 import WineDetailPage from "./pages/wine/WineDetailPage";
 import UserDetailPage from "./pages/user/UserDetailPage";
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainPage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainPage />}></Route>
+            <Route path="/login" element={<LoginPage />}></Route>
 
-          <Route path="/class" element={<ClassPage />}></Route>
-          <Route path="/class/member" element={<ClassMemberPage />}></Route>
+            <Route path="/class" element={<ClassPage />}></Route>
+            <Route path="/class/member" element={<ClassMemberPage />}></Route>
 
-          <Route path="/wine" element={<WinePage />}></Route>
-          <Route path="/wine/:id" element={<WineDetailPage />}></Route>
-          <Route path="/wine/add" element={<AddWinePage />}></Route>
+            <Route path="/wine" element={<WinePage />}></Route>
+            <Route path="/wine/:id" element={<WineDetailPage />}></Route>
+            <Route path="/wine/add" element={<AddWinePage />}></Route>
 
-          <Route path="/user" element={<UserPage />}></Route>
-          <Route path="/user/:id" element={<UserDetailPage />}></Route>
+            <Route path="/user" element={<UserPage />}></Route>
+            <Route path="/user/:id" element={<UserDetailPage />}></Route>
 
-          <Route path="/report" element={<ReportPage />}></Route>
-          <Route path="/report/noshow" element={<NoshowReportPage />}></Route>
-          <Route
-            path="/report/completed"
-            element={<CompletedReportPage />}
-          ></Route>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+            <Route path="/report" element={<ReportPage />}></Route>
+            <Route path="/report/noshow" element={<NoshowReportPage />}></Route>
+            <Route
+              path="/report/completed"
+              element={<CompletedReportPage />}
+            ></Route>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 
