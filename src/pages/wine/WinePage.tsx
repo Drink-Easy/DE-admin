@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DetailHeader from "../../components/common/DetailHeader";
+import DetailHeader from "../../components/common/Header/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";

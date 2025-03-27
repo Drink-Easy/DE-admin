@@ -6,6 +6,7 @@ const colors = {
   gray_100: "rgba(0, 0, 0, 0.3)",
   gray_200: "#D9D9D9",
   gray_300: "#686565",
+  gray_400: "rgba(255, 255, 255, 0.50)",
 
   white: "#fff",
   black: "#000",
@@ -30,8 +31,17 @@ const fonts = {
     letter-spacing: -0.075rem;
   `,
 
-  // 상세페이지 헤더
+  // 로그인 서브타이틀
   Title_3: css`
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 28px */
+    letter-spacing: -0.0625rem;
+  `,
+
+  // 상세페이지 헤더
+  Title_4: css`
     font-size: 2rem;
     font-style: normal;
     font-weight: 700;
