@@ -1,4 +1,4 @@
-export interface Wine {
+export interface WineDataTypes {
   id: string;
   name: string;
   engName: string;
@@ -12,7 +12,8 @@ export interface Wine {
   action1: string;
   action2: string;
 }
-export interface TitledWine {
+
+export interface TitledWineDataTypes {
   id: string;
   name: string;
   sort: string;
@@ -22,7 +23,8 @@ export interface TitledWine {
   action1: string;
   action2: string;
 }
-export interface User {
+
+export interface UserDataTypes {
   id: string;
   name: string;
   userId: string;
@@ -32,7 +34,8 @@ export interface User {
   banEndDate: string;
   action: string;
 }
-export interface UserDetail {
+
+export interface UserDetailDataTypes {
   id: string;
   status: string;
   activityDate: string;

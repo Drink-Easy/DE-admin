@@ -3,7 +3,7 @@ import DetailHeader from "../../components/common/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
-import { User } from "../../interface/interface";
+import { UserDataTypes } from "../../types/CommonTypes";
 import { useNavigate } from "react-router-dom";
 import { userColumns } from "../../constants/constants";
 import AdminHeader from "../../components/common/Header/AdminHeader";
@@ -11,7 +11,7 @@ import AdminHeader from "../../components/common/Header/AdminHeader";
 export default function UserPage() {
   const navigate = useNavigate();
 
-  const data: User[] = [
+  const data: UserDataTypes[] = [
     {
       id: "C011123",
       name: "위승주",
