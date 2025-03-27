@@ -22,24 +22,22 @@ export default function UserDetailPage() {
     },
   ];
   return (
-    <>
-      <Container>
-        <AdminHeader />
-        <DetailHeader />
-        <ContentContainer>
-          <SideBar
-            title="회원정보 관리"
-            menuItems={[{ text: "회원 조회", path: "/user" }]}
-          />
-          <InnerContainer>
-            <Table columns={userColumns} data={data} />
-            <StyledWrapper>
-              <UserDetailContent />
-            </StyledWrapper>
-          </InnerContainer>
-        </ContentContainer>
-      </Container>
-    </>
+    <Container>
+      <AdminHeader />
+      <DetailHeader />
+      <ContentContainer>
+        <SideBar
+          title="회원정보 관리"
+          menuItems={[{ text: "회원 조회", path: "/user" }]}
+        />
+        <InnerContainer>
+          <Table columns={userColumns} data={data} />
+          <StyledWrapper>
+            <UserDetailContent />
+          </StyledWrapper>
+        </InnerContainer>
+      </ContentContainer>
+    </Container>
   );
 }
 const Container = styled.div`

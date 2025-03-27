@@ -40,35 +40,33 @@ export default function WinePage() {
   };
 
   return (
-    <>
-      <Container>
-        <AdminHeader />
-        <DetailHeader />
-        <ContentContainer>
-          <SideBar
-            title="와인정보 관리"
-            menuItems={[
-              { text: "등록된 와인 리스트", path: "/wine" },
-              { text: "와인 추가", path: "/wine/add" },
-            ]}
+    <Container>
+      <AdminHeader />
+      <DetailHeader />
+      <ContentContainer>
+        <SideBar
+          title="와인정보 관리"
+          menuItems={[
+            { text: "등록된 와인 리스트", path: "/wine" },
+            { text: "와인 추가", path: "/wine/add" },
+          ]}
+        />
+        <InnerContainer>
+          <SearchBox titles={["와인명 :", "종류 :", "품종 :", "생산지 :"]} />
+          <Table
+            columns={wineColumns}
+            data={titleData}
+            onRowClick={handleRowClick}
           />
-          <InnerContainer>
-            <SearchBox titles={["와인명 :", "종류 :", "품종 :", "생산지 :"]} />
-            <Table
-              columns={wineColumns}
-              data={titleData}
-              onRowClick={handleRowClick}
-            />
-          </InnerContainer>
-        </ContentContainer>
-      </Container>
-    </>
+        </InnerContainer>
+      </ContentContainer>
+    </Container>
   );
 }
 
 const Container = styled.div`
   width: 100%;
-  height: 102.4rem;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 

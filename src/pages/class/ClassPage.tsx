@@ -5,27 +5,25 @@ import AdminHeader from "../../components/common/Header/AdminHeader";
 
 export default function ClassPage() {
   return (
-    <>
-      <Container>
-        <AdminHeader />
-        <DetailHeader />
-        <ContentContainer>
-          <SideBar
-            title="클래스 관리"
-            menuItems={[
-              { text: "글 작성", path: "/class" },
-              { text: "클래스 작성 멤버", path: "/class/member" },
-            ]}
-          />
-        </ContentContainer>
-      </Container>
-    </>
+    <Container>
+      <AdminHeader />
+      <DetailHeader />
+      <ContentContainer>
+        <SideBar
+          title="클래스 관리"
+          menuItems={[
+            { text: "글 작성", path: "/class" },
+            { text: "클래스 작성 멤버", path: "/class/member" },
+          ]}
+        />
+      </ContentContainer>
+    </Container>
   );
 }
 
 const Container = styled.div`
   width: 100%;
-  height: 102.4rem;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 

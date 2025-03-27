@@ -23,32 +23,31 @@ export default function WineDetailPage() {
   ];
 
   return (
-    <>
-      <Container>
-        <AdminHeader />
-        <DetailHeader />
-        <ContentContainer>
-          <SideBar
-            title="와인정보 관리"
-            menuItems={[
-              { text: "등록된 와인 리스트", path: "/wine" },
-              { text: "와인 추가", path: "/wine/add" },
-            ]}
-          />
-          <InnerContainer>
-            <Table columns={wineColumns} data={titleData} />
-            <StyledWrapper>
-              <WineDetailContent />
-            </StyledWrapper>
-          </InnerContainer>
-        </ContentContainer>
-      </Container>
-    </>
+    <Container>
+      <AdminHeader />
+      <DetailHeader />
+      <ContentContainer>
+        <SideBar
+          title="와인정보 관리"
+          menuItems={[
+            { text: "등록된 와인 리스트", path: "/wine" },
+            { text: "와인 추가", path: "/wine/add" },
+          ]}
+        />
+        <InnerContainer>
+          <Table columns={wineColumns} data={titleData} />
+          <StyledWrapper>
+            <WineDetailContent />
+          </StyledWrapper>
+        </InnerContainer>
+      </ContentContainer>
+    </Container>
   );
 }
+
 const Container = styled.div`
   width: 100%;
-  height: 102.4rem;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 

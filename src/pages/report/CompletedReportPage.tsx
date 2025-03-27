@@ -41,32 +41,30 @@ export default function CompletedReportPage() {
   ];
 
   return (
-    <>
-      <Container>
-        <AdminHeader />
-        <DetailHeader />
-        <ContentContainer>
-          <SideBar
-            title="신고 접수 관리"
-            menuItems={[
-              { text: "접수된 댓글 신고", path: "/report" },
-              { text: "접수된 노쇼 신고", path: "/report/noshow" },
-              { text: "처리완료 건", path: "/report/completed" },
-            ]}
-          />
-          <InnerContainer>
-            <SearchBox titles={["신고자 :", "신고 대상 :"]} />
-            <Table columns={columns} data={data} />
-          </InnerContainer>
-        </ContentContainer>
-      </Container>
-    </>
+    <Container>
+      <AdminHeader />
+      <DetailHeader />
+      <ContentContainer>
+        <SideBar
+          title="신고 접수 관리"
+          menuItems={[
+            { text: "접수된 댓글 신고", path: "/report" },
+            { text: "접수된 노쇼 신고", path: "/report/noshow" },
+            { text: "처리완료 건", path: "/report/completed" },
+          ]}
+        />
+        <InnerContainer>
+          <SearchBox titles={["신고자 :", "신고 대상 :"]} />
+          <Table columns={columns} data={data} />
+        </InnerContainer>
+      </ContentContainer>
+    </Container>
   );
 }
 
 const Container = styled.div`
   width: 100%;
-  height: 102.4rem;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 

@@ -49,7 +49,11 @@ export default function SideBar(props: SideBarProps) {
             isActive = pathname.startsWith("/user") && item.path === "/user";
           }
           return (
-            <BtnWrapper key={index} onClick={() => handleNavigation(item.path)}>
+            <BtnWrapper
+              key={index}
+              type="button"
+              onClick={() => handleNavigation(item.path)}
+            >
               {isActive ? (
                 <ActivateText>{item.text}</ActivateText>
               ) : (

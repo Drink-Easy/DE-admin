@@ -4,33 +4,30 @@ import { BtnWrapper } from "../../styles/GlobalStyle";
 
 export default function LoginPage() {
   return (
-    <>
-      <Container>
-        <Header />
-        <LoginBox>
-          <TitleText>Login</TitleText>
-          <SubTitleText>only for admin</SubTitleText>
-
-          <InnerContainer>
-            <InputBox>
-              <Input type="text" placeholder="User ID" />
-              <Input type="text" placeholder="Password" />
-            </InputBox>
-            <StyledBtnWrapper type="button">
-              <TitleText>Login</TitleText>
-            </StyledBtnWrapper>
-          </InnerContainer>
-          <Text>관리자만 로그인 할 수 있으며</Text>
-          <Text>서비스 이용을 원하시면 어플을 이용해주세요.</Text>
-        </LoginBox>
-      </Container>
-    </>
+    <Container>
+      <Header />
+      <LoginBox>
+        <TitleText>Login</TitleText>
+        <SubTitleText>only for admin</SubTitleText>
+        <InnerContainer>
+          <InputBox>
+            <Input type="text" placeholder="User ID" />
+            <Input type="text" placeholder="Password" />
+          </InputBox>
+          <StyledBtnWrapper type="button">
+            <TitleText>Login</TitleText>
+          </StyledBtnWrapper>
+        </InnerContainer>
+        <Text>관리자만 로그인 할 수 있으며</Text>
+        <Text>서비스 이용을 원하시면 어플을 이용해주세요.</Text>
+      </LoginBox>
+    </Container>
   );
 }
 
 const Container = styled.div`
   width: 100%;
-  height: 102.4rem;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.black};
 `;
 
