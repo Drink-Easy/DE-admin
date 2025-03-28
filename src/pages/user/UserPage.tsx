@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DetailHeader from "../../components/common/DetailHeader";
+import DetailHeader from "../../components/common/Header/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
@@ -39,32 +39,30 @@ export default function UserPage() {
   };
 
   return (
-    <>
-      <Container>
-        <AdminHeader />
-        <DetailHeader />
-        <ContentContainer>
-          <SideBar
-            title="회원정보 관리"
-            menuItems={[{ text: "회원 조회", path: "/user" }]}
+    <Container>
+      <AdminHeader />
+      <DetailHeader />
+      <ContentContainer>
+        <SideBar
+          title="회원정보 관리"
+          menuItems={[{ text: "회원 조회", path: "/user" }]}
+        />
+        <InnerContainer>
+          <SearchBox titles={["회원명 :", "회원 ID :"]} />
+          <Table
+            columns={userColumns}
+            data={data}
+            onRowClick={handleRowClick}
           />
-          <InnerContainer>
-            <SearchBox titles={["회원명 :", "회원 ID :"]} />
-            <Table
-              columns={userColumns}
-              data={data}
-              onRowClick={handleRowClick}
-            />
-          </InnerContainer>
-        </ContentContainer>
-      </Container>
-    </>
+        </InnerContainer>
+      </ContentContainer>
+    </Container>
   );
 }
 
 const Container = styled.div`
   width: 100%;
-  height: 102.4rem;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 

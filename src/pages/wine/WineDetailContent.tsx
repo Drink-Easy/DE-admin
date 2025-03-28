@@ -80,118 +80,119 @@ export default function WineDetailContent() {
   };
 
   return (
-    <>
-      <Container>
-        <Contents>
-          <SideContent>
-            <div>와인 번호</div>
-            <div>와인명</div>
-            <div>와인명 (영문)</div>
-            <div>품종</div>
-            <div>종류</div>
-            <div>가격</div>
-            <div>지역</div>
-            <div>생산지(국가)</div>
-            <div>비비노 평점</div>
-            <div>이미지</div>
-          </SideContent>
-          <WineContent>
-            <InputBox
-              name="id"
-              value={wineData.id}
-              onChange={handleChange}
-              isEdited={isEdited.id}
-              size="small"
-              placeholder="000000"
-            />
-            <InputBox
-              name="name"
-              value={wineData.name}
-              onChange={handleChange}
-              isEdited={isEdited.name}
-              size="large"
-              placeholder="이름 입력"
-            />
-            <InputBox
-              name="engName"
-              value={wineData.engName}
-              onChange={handleChange}
-              isEdited={isEdited.engName}
-              size="large"
-              placeholder="이름 입력"
-            />
-            <InputBox
-              name="variety"
-              value={wineData.variety}
-              onChange={handleChange}
-              isEdited={isEdited.variety}
-              size="large"
-              placeholder="품종 입력"
-            />
-            <TypeSelector>
-              {typeOptions.map((type) => (
-                <TypeButton
-                  key={type}
-                  selected={selectedSort === type}
-                  onClick={() => handleTypeSelect(type)}
-                >
-                  {type}
-                </TypeButton>
-              ))}
-            </TypeSelector>
-            <InputBox
-              name="price"
-              value={wineData.price}
-              onChange={handleChange}
-              isEdited={isEdited.price}
-              size="large"
-              placeholder="금액 입력"
-            />
-            <InputBox
-              name="region"
-              value={wineData.region}
-              onChange={handleChange}
-              isEdited={isEdited.region}
-              size="large"
-              placeholder="지역 입력"
-            />
-            <InputBox
-              name="country"
-              value={wineData.country}
-              onChange={handleChange}
-              isEdited={isEdited.country}
-              size="large"
-              placeholder="생산지 입력"
-            />
-            <InputBox
-              name="country"
-              value={wineData.vivinoRating}
-              onChange={handleChange}
-              isEdited={isEdited.vivinoRating}
-              size="large"
-              placeholder="평점 입력"
-            />
-            <ImgContents>
-              <Img />
-              <ModifyBtn>수정</ModifyBtn>
-            </ImgContents>
-          </WineContent>
-        </Contents>
-        <BtnContainer>
-          <RegisterBtn>등록</RegisterBtn>
-          <CancelBtn>취소</CancelBtn>
-        </BtnContainer>
-      </Container>
-    </>
+    <Container>
+      <Contents>
+        <SideContent>
+          <div>와인 번호</div>
+          <div>와인명</div>
+          <div>와인명 (영문)</div>
+          <div>품종</div>
+          <div>종류</div>
+          <div>가격</div>
+          <div>지역</div>
+          <div>생산지(국가)</div>
+          <div>비비노 평점</div>
+          <div>이미지</div>
+        </SideContent>
+        <WineContent>
+          <InputBox
+            name="id"
+            value={wineData.id}
+            onChange={handleChange}
+            isEdited={isEdited.id}
+            size="small"
+            placeholder="000000"
+          />
+          <InputBox
+            name="name"
+            value={wineData.name}
+            onChange={handleChange}
+            isEdited={isEdited.name}
+            size="large"
+            placeholder="이름 입력"
+          />
+          <InputBox
+            name="engName"
+            value={wineData.engName}
+            onChange={handleChange}
+            isEdited={isEdited.engName}
+            size="large"
+            placeholder="이름 입력"
+          />
+          <InputBox
+            name="variety"
+            value={wineData.variety}
+            onChange={handleChange}
+            isEdited={isEdited.variety}
+            size="large"
+            placeholder="품종 입력"
+          />
+          <TypeSelector>
+            {typeOptions.map((type) => (
+              <TypeButton
+                key={type}
+                selected={selectedSort === type}
+                onClick={() => handleTypeSelect(type)}
+              >
+                {type}
+              </TypeButton>
+            ))}
+          </TypeSelector>
+          <InputBox
+            name="price"
+            value={wineData.price}
+            onChange={handleChange}
+            isEdited={isEdited.price}
+            size="large"
+            placeholder="금액 입력"
+          />
+          <InputBox
+            name="region"
+            value={wineData.region}
+            onChange={handleChange}
+            isEdited={isEdited.region}
+            size="large"
+            placeholder="지역 입력"
+          />
+          <InputBox
+            name="country"
+            value={wineData.country}
+            onChange={handleChange}
+            isEdited={isEdited.country}
+            size="large"
+            placeholder="생산지 입력"
+          />
+          <InputBox
+            name="country"
+            value={wineData.vivinoRating}
+            onChange={handleChange}
+            isEdited={isEdited.vivinoRating}
+            size="large"
+            placeholder="평점 입력"
+          />
+          <ImgContents>
+            <Img />
+            <ModifyBtn>수정</ModifyBtn>
+          </ImgContents>
+        </WineContent>
+      </Contents>
+      <BtnContainer>
+        <RegisterBtn>등록</RegisterBtn>
+        <CancelBtn>취소</CancelBtn>
+      </BtnContainer>
+    </Container>
   );
 }
+
 const Container = styled.div`
   width: 100%;
 `;
+
 const Contents = styled.div`
   display: flex;
   align-items: flex-start;
 `;
+
 const SideContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -204,12 +205,14 @@ const SideContent = styled.div`
     height: 2.66rem;
   }
 `;
+
 const WineContent = styled.div`
   margin-left: 6.4rem;
   display: flex;
   flex-direction: column;
   gap: 2.9rem;
 `;
+
 const InputBox = styled.input.withConfig({
   shouldForwardProp: (prop) => prop !== "isEdited",
 })<{
@@ -238,6 +241,7 @@ const InputBox = styled.input.withConfig({
     color: rgba(0, 0, 0, 0.3);
   }
 `;
+
 const TypeSelector = styled.div`
   display: flex;
   gap: 1.2rem;
@@ -255,15 +259,18 @@ const TypeButton = styled.button<{
     ${({ selected }) => (selected ? "black" : "rgba(0, 0, 0, 0.3)")};
   color: ${({ selected }) => (selected ? "black" : "rgba(0, 0, 0, 0.3)")};
 `;
+
 const ImgContents = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const Img = styled.div`
   width: 10rem;
   height: 10rem;
   background: #d9d9d9;
 `;
+
 const ModifyBtn = styled.button`
   width: 7rem;
   height: 3rem;
@@ -272,12 +279,14 @@ const ModifyBtn = styled.button`
   margin-left: 1.3rem;
   ${({ theme }) => theme.fonts.Body_3};
 `;
+
 const BtnContainer = styled.div`
   display: flex;
   margin-top: 5rem;
   margin-left: 39.7rem;
   ${({ theme }) => theme.fonts.Body_3};
 `;
+
 const RegisterBtn = styled.div`
   width: 13.7rem;
   height: 3rem;
@@ -287,6 +296,7 @@ const RegisterBtn = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 const CancelBtn = styled.div`
   width: 7rem;
   height: 3rem;
