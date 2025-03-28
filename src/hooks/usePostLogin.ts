@@ -1,10 +1,10 @@
 import { useMutation, UseMutationResult } from "react-query";
 import { postLogin, LoginResponse } from "../api/postLogin";
-import { Response } from "../types/Response"; // Response 타입을 가져옵니다.
+import { Response } from "../types/Response";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 
-export function usePostSignIn(): UseMutationResult<
+export function usePostLogin(): UseMutationResult<
   Response<LoginResponse>, // 반환하는 데이터 타입
   AxiosError,
   { username: string; password: string }
