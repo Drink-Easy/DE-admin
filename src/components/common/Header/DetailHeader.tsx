@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { BtnWrapper } from "../../styles/GlobalStyle";
+import { BtnWrapper } from "../../../styles/GlobalStyle";
 
 export default function Header() {
   const navigate = useNavigate();

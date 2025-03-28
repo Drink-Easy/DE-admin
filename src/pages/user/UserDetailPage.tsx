@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DetailHeader from "../../components/common/DetailHeader";
+import DetailHeader from "../../components/common/Header/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import Table from "../../components/common/Table";
 import { User } from "../../interface/interface";
@@ -22,24 +22,22 @@ export default function UserDetailPage() {
     },
   ];
   return (
-    <>
-      <Container>
-        <AdminHeader />
-        <DetailHeader />
-        <ContentContainer>
-          <SideBar
-            title="회원정보 관리"
-            menuItems={[{ text: "회원 조회", path: "/user" }]}
-          />
-          <InnerContainer>
-            <Table columns={userColumns} data={data} />
-            <StyledWrapper>
-              <UserDetailContent />
-            </StyledWrapper>
-          </InnerContainer>
-        </ContentContainer>
-      </Container>
-    </>
+    <Container>
+      <AdminHeader />
+      <DetailHeader />
+      <ContentContainer>
+        <SideBar
+          title="회원정보 관리"
+          menuItems={[{ text: "회원 조회", path: "/user" }]}
+        />
+        <InnerContainer>
+          <Table columns={userColumns} data={data} />
+          <StyledWrapper>
+            <UserDetailContent />
+          </StyledWrapper>
+        </InnerContainer>
+      </ContentContainer>
+    </Container>
   );
 }
 const Container = styled.div`

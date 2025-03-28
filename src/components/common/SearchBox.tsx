@@ -16,7 +16,7 @@ export default function SearchBox({ titles }: SearchBoxProps) {
           </SearchWrapper>
         ))}
       </SearchContainer>
-      <BtnWrapper>
+      <BtnWrapper type="button">
         <BtnText>검색</BtnText>
       </BtnWrapper>
     </Container>
