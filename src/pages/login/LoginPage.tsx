@@ -3,15 +3,24 @@ import { useState } from "react";
 import Header from "../../components/common/Header/MainHeader";
 import { BtnWrapper } from "../../styles/GlobalStyle";
 import { usePostLogin } from "../../hooks/usePostLogin";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
+  const navigate = useNavigate();
   const [ID, setId] = useState("");
   const [PW, setPw] = useState("");
 
   const { mutate: postLoginMutate } = usePostLogin();
 
   function handleLogin() {
-    postLoginMutate({ username: ID, password: PW });
+    postLoginMutate(
+      { username: ID, password: PW },
+      {
+        onSuccess: () => {
+          navigate("/class");
+        },
+      }
+    );
   }
 
   return (
