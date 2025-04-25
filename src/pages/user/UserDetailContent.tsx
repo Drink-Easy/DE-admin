@@ -1,9 +1,9 @@
-import { UserDetail } from "../../interface/interface";
+import { UserDetailDataTypes } from "../../types/CommonTypes";
 import { useState } from "react";
 import styled from "styled-components";
 
 export default function UserDetailContent() {
-  const user: UserDetail = {
+  const user: UserDetailDataTypes = {
     id: "C011123",
     status: "정상",
     activityDate: "0000",

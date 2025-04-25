@@ -1,8 +1,28 @@
 import styled from "styled-components";
+import { useState } from "react";
 import Header from "../../components/common/Header/MainHeader";
 import { BtnWrapper } from "../../styles/GlobalStyle";
+import { usePostLogin } from "../../hooks/usePostLogin";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
+  const navigate = useNavigate();
+  const [ID, setId] = useState("");
+  const [PW, setPw] = useState("");
+
+  const { mutate: postLoginMutate } = usePostLogin();
+
+  function handleLogin() {
+    postLoginMutate(
+      { username: ID, password: PW },
+      {
+        onSuccess: () => {
+          navigate("/class");
+        },
+      }
+    );
+  }
+
   return (
     <Container>
       <Header />
@@ -11,10 +31,20 @@ export default function LoginPage() {
         <SubTitleText>only for admin</SubTitleText>
         <InnerContainer>
           <InputBox>
-            <Input type="text" placeholder="User ID" />
-            <Input type="text" placeholder="Password" />
+            <Input
+              type="text"
+              placeholder="User ID"
+              value={ID}
+              onChange={(e) => setId(e.target.value)}
+            />
+            <Input
+              type="text"
+              placeholder="Password"
+              value={PW}
+              onChange={(e) => setPw(e.target.value)}
+            />
           </InputBox>
-          <StyledBtnWrapper type="button">
+          <StyledBtnWrapper type="button" onClick={handleLogin}>
             <TitleText>Login</TitleText>
           </StyledBtnWrapper>
         </InnerContainer>

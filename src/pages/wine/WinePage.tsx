@@ -3,7 +3,7 @@ import DetailHeader from "../../components/common/Header/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
-import { TitledWine } from "../../interface/interface";
+import { TitledWineDataTypes } from "../../types/CommonTypes";
 import { useNavigate } from "react-router-dom";
 import { wineColumns } from "../../constants/constants";
 import AdminHeader from "../../components/common/Header/AdminHeader";
@@ -11,7 +11,7 @@ import AdminHeader from "../../components/common/Header/AdminHeader";
 export default function WinePage() {
   const navigate = useNavigate();
 
-  const titleData: TitledWine[] = [
+  const titleData: TitledWineDataTypes[] = [
     //추후 api로 개별 와인 조회 예정이라 정적 데이터
     {
       id: "102391",

@@ -1,10 +1,9 @@
 import axios, { AxiosInstance } from "axios";
 
 export const customAxios: AxiosInstance = axios.create({
-  baseURL: `${import.meta.env.VITE_APP_BASE_URL}`,
+  baseURL: `${import.meta.env.VITE_BASE_URL}`,
   headers: {
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
   },
   withCredentials: true,
 });

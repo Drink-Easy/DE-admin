@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Wine } from "../../interface/interface";
+import { WineDataTypes } from "../../types/CommonTypes";
 import { useState } from "react";
 
 export default function WineDetailContent() {
   //추후 api로 개별 와인 조회 예정이라 정적 데이터 -> id 조회 api 예상/예정
-  const wine: Wine = {
+  const wine: WineDataTypes = {
     id: "102391",
     name: "루이 로드레 크리스탈 2014",
     engName: "Carte Blanche, UV Vinyard Chardonnay",
