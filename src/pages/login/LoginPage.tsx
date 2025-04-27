@@ -113,6 +113,7 @@ const Input = styled.input`
 const StyledBtnWrapper = styled(BtnWrapper)`
   width: 11.4rem;
   height: 11.8rem;
+  margin-bottom: 1.8rem;
 
   border: 1px solid #fff;
   background-color: transparent;
