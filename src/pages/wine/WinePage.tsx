@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { wineColumns } from "../../constants/constants";
 import AdminHeader from "../../components/common/Header/AdminHeader";
 import { useGetWineSearch } from "../../hooks/useGetWineSearch";
+import { formatDate } from "../../utils/formatDate";
 
 export default function WinePage() {
   const navigate = useNavigate();
@@ -71,10 +72,13 @@ export default function WinePage() {
           />
           <Table
             columns={wineColumns}
-            data={(data?.result.content ?? []).map(({ wineId, ...wine }) => ({
-              id: wineId.toString(), // wineId만 따로 꺼내고
-              ...wine, // 나머지만 넘긴다 (wineId는 제외)
-            }))}
+            data={(data?.result.content ?? []).map(
+              ({ wineId, createdAt, ...wine }) => ({
+                id: wineId.toString(),
+                ...wine,
+                createdAt: formatDate(createdAt), // createdAt 포맷 변경
+              })
+            )}
             onRowClick={handleRowClick}
           />
         </InnerContainer>
