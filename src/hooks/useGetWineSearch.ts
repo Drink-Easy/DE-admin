@@ -1,6 +1,10 @@
 import { useQuery } from "react-query";
 import { getWineSearch, WineSearchParams } from "../api/getWineSearch";
 
+interface UseGetWineSearchProps extends WineSearchParams {
+  trigger: number; // trigger 추가
+}
+
 export function useGetWineSearch({
   searchName,
   wineSort,
@@ -9,18 +13,10 @@ export function useGetWineSearch({
   page,
   size,
   sort,
-}: WineSearchParams) {
+  trigger,
+}: UseGetWineSearchProps) {
   const { data } = useQuery(
-    [
-      "getMonthHoney",
-      searchName,
-      wineSort,
-      wineVariety,
-      wineCountry,
-      page,
-      size,
-      sort,
-    ],
+    ["getMonthHoney", trigger],
     () =>
       getWineSearch({
         searchName,
