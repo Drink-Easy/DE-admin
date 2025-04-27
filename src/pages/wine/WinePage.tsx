@@ -16,6 +16,7 @@ export default function WinePage() {
 
   const fieldNames = ["searchName", "wineSort", "wineVariety", "wineCountry"];
   const [searchTrigger, setSearchTrigger] = useState(0);
+  const [page, setPage] = useState(0);
 
   // state를 필드 이름 기반으로 관리
   const [searchParams, setSearchParams] = useState({
@@ -27,7 +28,7 @@ export default function WinePage() {
 
   const { data: WineData } = useGetWineSearch({
     ...searchParams,
-    page: 0,
+    page: page,
     size: 7,
     sort: "name,ASC",
     trigger: searchTrigger,
@@ -86,14 +87,11 @@ export default function WinePage() {
             onRowClick={handleRowClick}
           />
           <Pagination
-            currentPage={WineData?.result.pageNumber + 1 || 1} // 서버 pageNumber가 0부터 시작하면 +1
+            currentPage={page + 1} // 서버는 0부터니까 사용자에게는 1부터 보여주기
             totalPages={WineData?.result.totalPages || 1}
-            onPageChange={(page) => {
-              setSearchParams((prev) => ({
-                ...prev,
-                page: page - 1, // 서버가 0부터 페이지를 세면 -1
-              }));
-              setSearchTrigger((prev) => prev + 1); // 페이지 클릭했을 때 검색 다시
+            onPageChange={(newPage) => {
+              setPage(newPage - 1); // 사용자는 1페이지부터 누르지만 서버는 0부터니까 -1
+              setSearchTrigger((prev) => prev + 1); // API 다시 요청
             }}
           />
         </InnerContainer>

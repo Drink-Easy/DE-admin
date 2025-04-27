@@ -50,7 +50,7 @@ const Container = styled.div`
 const Number = styled.p<{ $isActive?: boolean }>`
   ${({ theme }) => theme.fonts.Body_4};
   color: ${({ theme, $isActive }) =>
-    $isActive ? theme.colors.purple : theme.colors.black};
+    $isActive ? theme.colors.purple_100 : theme.colors.black};
 
   ${({ $isActive }) =>
     $isActive &&
