@@ -9,13 +9,15 @@ import { wineColumns } from "../../constants/constants";
 import AdminHeader from "../../components/common/Header/AdminHeader";
 import { useGetWineSearch } from "../../hooks/useGetWineSearch";
 import { formatDate } from "../../utils/formatDate";
+import Pagination from "../../components/common/Pagination";
 
 export default function WinePage() {
   const navigate = useNavigate();
 
   const fieldNames = ["searchName", "wineSort", "wineVariety", "wineCountry"];
+  const [searchTrigger, setSearchTrigger] = useState(0);
 
-  // ✨ state를 필드 이름 기반으로 관리
+  // state를 필드 이름 기반으로 관리
   const [searchParams, setSearchParams] = useState({
     searchName: "",
     wineSort: "",
@@ -23,9 +25,7 @@ export default function WinePage() {
     wineCountry: "",
   });
 
-  const [searchTrigger, setSearchTrigger] = useState(0);
-
-  const { data } = useGetWineSearch({
+  const { data: WineData } = useGetWineSearch({
     ...searchParams,
     page: 0,
     size: 7,
@@ -48,6 +48,10 @@ export default function WinePage() {
   const handleRowClick = (id: string) => {
     navigate(`/wine/${id}`);
   };
+
+  if (!WineData) {
+    return <></>;
+  }
 
   return (
     <Container>
@@ -72,7 +76,7 @@ export default function WinePage() {
           />
           <Table
             columns={wineColumns}
-            data={(data?.result.content ?? []).map(
+            data={(WineData?.result.content ?? []).map(
               ({ wineId, createdAt, ...wine }) => ({
                 id: wineId.toString(),
                 ...wine,
@@ -80,6 +84,17 @@ export default function WinePage() {
               })
             )}
             onRowClick={handleRowClick}
+          />
+          <Pagination
+            currentPage={WineData?.result.pageNumber + 1 || 1} // 서버 pageNumber가 0부터 시작하면 +1
+            totalPages={WineData?.result.totalPages || 1}
+            onPageChange={(page) => {
+              setSearchParams((prev) => ({
+                ...prev,
+                page: page - 1, // 서버가 0부터 페이지를 세면 -1
+              }));
+              setSearchTrigger((prev) => prev + 1); // 페이지 클릭했을 때 검색 다시
+            }}
           />
         </InnerContainer>
       </ContentContainer>
