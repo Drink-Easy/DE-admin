@@ -1,16 +1,14 @@
 import styled from "styled-components";
+import { WineRow } from "../../types/CommonTypes";
+import { renderCell } from "../../utils/renderCell";
 
-interface TableProps<T> {
+interface TableProps {
   columns: string[];
-  data: T[];
+  data: WineRow[];
   onRowClick?: (id: string) => void;
 }
 
-export default function Table<T extends { id: string }>({
-  columns,
-  data,
-  onRowClick,
-}: TableProps<T>) {
+export default function Table({ columns, data, onRowClick }: TableProps) {
   return (
     <Container>
       <TableRow>
@@ -20,11 +18,11 @@ export default function Table<T extends { id: string }>({
       </TableRow>
       <TitleLine />
       <TableBody>
-        {data.map((row, rowIndex) => (
-          <DataWrapper key={rowIndex}>
-            <TableRow onClick={() => onRowClick && onRowClick(row.id)}>
-              {Object.values(row).map((cell, cellIndex) => (
-                <TableCell key={cellIndex}>{cell}</TableCell>
+        {data.map((row) => (
+          <DataWrapper key={row.id}>
+            <TableRow onClick={() => onRowClick?.(row.id)}>
+              {columns.map((column, index) => (
+                <TableCell key={index}>{renderCell(row, column)}</TableCell>
               ))}
             </TableRow>
             <Line />

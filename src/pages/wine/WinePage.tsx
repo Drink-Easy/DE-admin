@@ -77,13 +77,15 @@ export default function WinePage() {
           />
           <Table
             columns={wineColumns}
-            data={(WineData?.result.content ?? []).map(
-              ({ wineId, createdAt, ...wine }) => ({
-                id: wineId.toString(),
-                ...wine,
-                createdAt: formatDate(createdAt), // createdAt 포맷 변경
-              })
-            )}
+            data={(WineData?.result.content ?? []).map((wine) => ({
+              id: wine.wineId.toString(), // 클릭용
+              wineId: wine.wineId.toString(), // 출력용
+              name: wine.name,
+              sort: wine.sort,
+              variety: wine.variety,
+              country: wine.country,
+              createdAt: formatDate(wine.createdAt),
+            }))}
             onRowClick={handleRowClick}
           />
           <Pagination

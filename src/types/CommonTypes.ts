@@ -41,3 +41,13 @@ export interface UserDetailDataTypes {
   activityDate: string;
   gatheringDate: string;
 }
+
+export interface WineRow {
+  id: string;
+  wineId: string;
+  name: string;
+  sort: string;
+  variety: string;
+  country: string;
+  createdAt: string;
+}
