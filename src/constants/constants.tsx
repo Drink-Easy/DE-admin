@@ -5,9 +5,8 @@ export const wineColumns = [
   "지역",
   "생산지(국가)",
   "등록일",
-  "-",
-  "-",
 ];
+
 export const userColumns = [
   "회원 번호",
   "회원명",

@@ -3,20 +3,29 @@ import { BtnWrapper } from "../../styles/GlobalStyle";
 
 interface SearchBoxProps {
   titles: string[];
+  inputValues: string[];
+  onInputChange: (index: number, value: string) => void;
+  onSearchClick: () => void;
 }
 
-export default function SearchBox({ titles }: SearchBoxProps) {
+export default function SearchBox(props: SearchBoxProps) {
+  const { titles, inputValues, onInputChange, onSearchClick } = props;
+
   return (
     <Container>
       <SearchContainer>
         {titles.map((title, index) => (
           <SearchWrapper key={index}>
             <Text>{title}</Text>
-            <SearchInput type="text" />
+            <SearchInput
+              type="text"
+              value={inputValues[index] || ""}
+              onChange={(e) => onInputChange(index, e.target.value)}
+            />
           </SearchWrapper>
         ))}
       </SearchContainer>
-      <BtnWrapper type="button">
+      <BtnWrapper type="button" onClick={onSearchClick}>
         <BtnText>검색</BtnText>
       </BtnWrapper>
     </Container>

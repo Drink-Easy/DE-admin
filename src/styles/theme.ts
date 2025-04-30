@@ -75,6 +75,15 @@ const fonts = {
     line-height: 140%; /* 21px */
     letter-spacing: -0.0375rem;
   `,
+
+  // 페이지 숫자
+  Body_4: css`
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 1.05rem */
+    letter-spacing: -0.01875rem;
+  `,
 };
 
 const theme = {
