@@ -17,3 +17,14 @@ export const userColumns = [
   "가입일",
   "정지 마감일",
 ];
+
+export const reportColumns = [
+  "접수 번호",
+  "신고 날짜",
+  "신고자 ID",
+  "신고대상 ID",
+  "신고내용",
+  "처리상태",
+  "처리 완료일",
+  "처리결과",
+];

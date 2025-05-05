@@ -52,3 +52,14 @@ export interface UserRow {
   createdAt: string;
   banEndDate: string;
 }
+
+export interface ReportRow {
+  id: string;
+  reportDate: string;
+  reporterId: string;
+  reportedId: string;
+  content: string;
+  status: string;
+  completedDate: string;
+  result: string;
+}

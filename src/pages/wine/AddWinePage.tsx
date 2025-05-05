@@ -4,7 +4,7 @@ import SideBar from "../../components/common/SideBar";
 import WineDetailContent from "./WineDetailContent";
 import AdminHeader from "../../components/common/Header/AdminHeader";
 
-export default function WineAddPage() {
+export default function AddWinePage() {
   return (
     <Container>
       <AdminHeader />
