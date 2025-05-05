@@ -16,5 +16,4 @@ export const userColumns = [
   "회원 상태",
   "가입일",
   "정지 마감일",
-  "-",
 ];

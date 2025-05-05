@@ -41,3 +41,14 @@ export interface WineRow {
   variety: string;
   createdAt: string;
 }
+
+export interface UserRow {
+  id: string;
+  userNum: string;
+  name: string;
+  userId: string;
+  phone: string;
+  status: string;
+  createdAt: string;
+  banEndDate: string;
+}

@@ -1,38 +1,58 @@
+import { useState } from "react";
 import styled from "styled-components";
 import DetailHeader from "../../components/common/Header/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
-import { UserDataTypes } from "../../types/CommonTypes";
 import { useNavigate } from "react-router-dom";
 import { userColumns } from "../../constants/constants";
 import AdminHeader from "../../components/common/Header/AdminHeader";
+import { renderUserCell } from "../../utils/renderUserCell";
+import { formatDate } from "../../utils/formatDate";
+import { UserRow } from "../../types/CommonTypes";
 
 export default function UserPage() {
   const navigate = useNavigate();
 
-  const data: UserDataTypes[] = [
+  const fieldNames = ["name", "userId"];
+  const [searchParams, setSearchParams] = useState({
+    name: "",
+    userId: "",
+  });
+  // const [searchTrigger, setSearchTrigger] = useState(0);
+
+  const data: UserRow[] = [
     {
-      id: "C011123",
+      id: "wsj11029",
+      userNum: "C011123",
       name: "위승주",
       userId: "wsj11029",
       phone: "010-3655-5641",
       status: "정상",
-      joinDate: "2024-09-03",
-      banEndDate: "-",
-      action: "-",
+      createdAt: "2025-05-05T15:51:39.535Z",
+      banEndDate: "2025-05-05T15:51:39.535Z",
     },
     {
-      id: "C011124",
+      id: "kimcs99",
+      userNum: "C011124",
       name: "김철수",
       userId: "kimcs99",
       phone: "010-2222-3333",
       status: "정상",
-      joinDate: "2024-07-01",
-      banEndDate: "-",
-      action: "-",
+      createdAt: "2025-05-05T15:51:39.535Z",
+      banEndDate: "2025-05-05T15:51:39.535Z",
     },
   ];
+
+  const handleInputChange = (index: number, value: string) => {
+    const key = fieldNames[index];
+    setSearchParams((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleSearchClick = () => {
+    // setSearchTrigger((prev) => prev + 1);
+    // 나중에 API 연동 시 여기에 트리거 넣는 걸루..
+  };
 
   const handleRowClick = (id: string) => {
     navigate(`/user/${id}`);
@@ -48,11 +68,28 @@ export default function UserPage() {
           menuItems={[{ text: "회원 조회", path: "/user" }]}
         />
         <InnerContainer>
-          <SearchBox titles={["회원명 :", "회원 ID :"]} />
+          <SearchBox
+            titles={["회원명 :", "회원 ID :"]}
+            inputValues={fieldNames.map(
+              (name) => searchParams[name as keyof typeof searchParams]
+            )}
+            onInputChange={handleInputChange}
+            onSearchClick={handleSearchClick}
+          />
           <Table
             columns={userColumns}
-            data={data}
+            data={data.map((user) => ({
+              id: user.userId,
+              userNum: user.userNum,
+              name: user.name,
+              userId: user.userId,
+              phone: user.phone,
+              status: user.status,
+              createdAt: formatDate(user.createdAt),
+              banEndDate: formatDate(user.banEndDate),
+            }))}
             onRowClick={handleRowClick}
+            renderCell={renderUserCell}
           />
         </InnerContainer>
       </ContentContainer>

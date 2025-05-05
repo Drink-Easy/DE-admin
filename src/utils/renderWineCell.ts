@@ -18,6 +18,6 @@ export function renderWineCell(row: WineRow, column: string): React.ReactNode {
     case "등록일":
       return row.createdAt;
     default:
-      return ""; // 매칭되는게 없으면 빈칸
+      return "-"; // 매칭되는게 없으면 -
   }
 }
