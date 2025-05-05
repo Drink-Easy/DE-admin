@@ -1,3 +1,4 @@
+/*
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 
@@ -11,3 +12,4 @@ export default function MainImageSlider() {
   });
   return <div></div>;
 }
+*/

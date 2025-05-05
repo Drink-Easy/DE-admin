@@ -4,8 +4,10 @@ import LoginPage from "./pages/login/LoginPage";
 import ClassPage from "./pages/class/ClassPage";
 import ClassMemberPage from "./pages/class/ClassMemberPage";
 import WinePage from "./pages/wine/WinePage";
+import WineMainPage from "./pages/wine/WineMainPage";
 import AddWinePage from "./pages/wine/AddWinePage";
 import UserPage from "./pages/user/UserPage";
+import UserMainPage from "./pages/user/UserMainPage";
 import ReportPage from "./pages/report/ReportPage";
 import NoshowReportPage from "./pages/report/NoshowReportPage";
 import CompletedReportPage from "./pages/report/CompletedReportPage";
@@ -32,6 +34,7 @@ export const router = createBrowserRouter([
     path: "/wine",
     element: <WinePage />,
     children: [
+      { index: true, element: <WineMainPage /> }, // /wine
       { path: "add", element: <AddWinePage /> }, // /wine/add
       { path: ":id", element: <WineDetailPage /> }, // /wine/:id
     ],
@@ -40,6 +43,7 @@ export const router = createBrowserRouter([
     path: "/user",
     element: <UserPage />,
     children: [
+      { index: true, element: <UserMainPage /> }, // /user
       { path: ":id", element: <UserDetailPage /> }, // /user/:id
     ],
   },

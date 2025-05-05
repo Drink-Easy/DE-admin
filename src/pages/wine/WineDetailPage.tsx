@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import DetailHeader from "../../components/common/Header/DetailHeader";
-import SideBar from "../../components/common/SideBar";
 import Table from "../../components/common/Table";
 import { wineColumns } from "../../constants/constants";
-import WineDetailContent from "./WineDetailContent";
-import AdminHeader from "../../components/common/Header/AdminHeader";
+import WineDetailContent from "../../components/WineDetailContent";
 import { renderWineCell } from "../../utils/renderWineCell";
 import { WineRow } from "../../types/CommonTypes";
 
@@ -25,44 +22,18 @@ export default function WineDetailPage() {
   ];
 
   return (
-    <Container>
-      <AdminHeader />
-      <DetailHeader />
-      <ContentContainer>
-        <SideBar
-          title="와인정보 관리"
-          menuItems={[
-            { text: "등록된 와인 리스트", path: "/wine" },
-            { text: "와인 추가", path: "/wine/add" },
-          ]}
-        />
-        <InnerContainer>
-          <Table
-            columns={wineColumns}
-            data={titleData}
-            renderCell={renderWineCell}
-          />
-          <StyledWrapper>
-            <WineDetailContent />
-          </StyledWrapper>
-        </InnerContainer>
-      </ContentContainer>
-    </Container>
+    <InnerContainer>
+      <Table
+        columns={wineColumns}
+        data={titleData}
+        renderCell={renderWineCell}
+      />
+      <StyledWrapper>
+        <WineDetailContent />
+      </StyledWrapper>
+    </InnerContainer>
   );
 }
-
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: ${({ theme }) => theme.colors.white};
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 4.9rem;
-  padding: 3.5rem 5rem 0rem 7.6rem;
-`;
 
 const InnerContainer = styled.div`
   display: flex;

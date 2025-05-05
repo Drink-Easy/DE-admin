@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { WineDataTypes } from "../../types/CommonTypes";
+import { WineDataTypes } from "./../types/CommonTypes";
 import { useState } from "react";
 
 export default function WineDetailContent() {
