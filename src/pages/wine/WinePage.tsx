@@ -10,6 +10,7 @@ import AdminHeader from "../../components/common/Header/AdminHeader";
 import { useGetWineSearch } from "../../hooks/useGetWineSearch";
 import { formatDate } from "../../utils/formatDate";
 import Pagination from "../../components/common/Pagination";
+import { renderWineCell } from "../../utils/renderWineCell";
 
 export default function WinePage() {
   const navigate = useNavigate();
@@ -78,15 +79,17 @@ export default function WinePage() {
           <Table
             columns={wineColumns}
             data={(WineData?.result.content ?? []).map((wine) => ({
-              id: wine.wineId.toString(), // 클릭용
-              wineId: wine.wineId.toString(), // 출력용
+              id: wine.wineId.toString(),
+              wineId: wine.wineId.toString(),
               name: wine.name,
               sort: wine.sort,
-              variety: wine.variety,
+              region: wine.region,
               country: wine.country,
+              variety: wine.variety,
               createdAt: formatDate(wine.createdAt),
             }))}
             onRowClick={handleRowClick}
+            renderCell={renderWineCell}
           />
           <Pagination
             currentPage={page + 1} // 서버는 0부터니까 사용자에게는 1부터 보여주기

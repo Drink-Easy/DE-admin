@@ -4,6 +4,7 @@ export const wineColumns = [
   "종류",
   "지역",
   "생산지(국가)",
+  "품종",
   "등록일",
 ];
 

@@ -1,14 +1,18 @@
 import styled from "styled-components";
-import { WineRow } from "../../types/CommonTypes";
-import { renderCell } from "../../utils/renderCell";
 
-interface TableProps {
+interface TableProps<T extends { id: string }> {
   columns: string[];
-  data: WineRow[];
+  data: T[];
   onRowClick?: (id: string) => void;
+  renderCell: (row: T, column: string) => React.ReactNode;
 }
 
-export default function Table({ columns, data, onRowClick }: TableProps) {
+export default function Table<T extends { id: string }>({
+  columns,
+  data,
+  onRowClick,
+  renderCell,
+}: TableProps<T>) {
   return (
     <Container>
       <TableRow>
