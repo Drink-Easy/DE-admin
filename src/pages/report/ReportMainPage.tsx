@@ -7,7 +7,7 @@ import { ReportRow } from "../../types/CommonTypes";
 import { renderReportCell } from "../../utils/renderReportCell";
 import { formatDate } from "../../utils/formatDate";
 
-export default function NoshowReportPage() {
+export default function ReportMainPage() {
   const fieldNames = ["reporter", "reported"];
   const [searchParams, setSearchParams] = useState({
     reporter: "",

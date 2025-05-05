@@ -9,6 +9,7 @@ import AddWinePage from "./pages/wine/AddWinePage";
 import UserPage from "./pages/user/UserPage";
 import UserMainPage from "./pages/user/UserMainPage";
 import ReportPage from "./pages/report/ReportPage";
+import ReportMainPage from "./pages/report/ReportMainPage";
 import NoshowReportPage from "./pages/report/NoshowReportPage";
 import CompletedReportPage from "./pages/report/CompletedReportPage";
 import WineDetailPage from "./pages/wine/WineDetailPage";
@@ -51,6 +52,7 @@ export const router = createBrowserRouter([
     path: "/report",
     element: <ReportPage />,
     children: [
+      { index: true, element: <ReportMainPage /> }, // /report
       { path: "noshow", element: <NoshowReportPage /> }, // /report/noshow
       { path: "completed", element: <CompletedReportPage /> }, // /report/completed
     ],
