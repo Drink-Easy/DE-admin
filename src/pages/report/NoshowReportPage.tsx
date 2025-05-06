@@ -1,44 +1,54 @@
+import { useState } from "react";
 import styled from "styled-components";
 import DetailHeader from "../../components/common/Header/DetailHeader";
 import SideBar from "../../components/common/SideBar";
 import SearchBox from "../../components/common/SearchBox";
 import Table from "../../components/common/Table";
-import { UserDataTypes } from "../../types/CommonTypes";
 import AdminHeader from "../../components/common/Header/AdminHeader";
+import { reportColumns } from "../../constants/constants";
+import { ReportRow } from "../../types/CommonTypes";
+import { renderReportCell } from "../../utils/renderReportCell";
+import { formatDate } from "../../utils/formatDate";
 
 export default function NoshowReportPage() {
-  const columns = [
-    "접수 번호",
-    "신고 날짜",
-    "신고자 ID",
-    "신고대상 ID",
-    "신고내용",
-    "처리상태",
-    "처리 완료일",
-    "처리결과",
-  ];
-  const data: UserDataTypes[] = [
+  const fieldNames = ["reporter", "reported"];
+  const [searchParams, setSearchParams] = useState({
+    reporter: "",
+    reported: "",
+  });
+  // const [searchTrigger, setSearchTrigger] = useState(0);
+
+  const data: ReportRow[] = [
     {
-      id: "C011123",
-      name: "위승주",
-      userId: "wsj11029",
-      phone: "010-3655-5641",
-      status: "정상",
-      joinDate: "2024-09-03",
-      banEndDate: "-",
-      action: "-",
+      id: "011",
+      reportDate: "2024-11-13",
+      reporterId: "wsj11029",
+      reportedId: "oyatplum",
+      content: "노쇼 신고",
+      status: "처리 전",
+      completedDate: "-",
+      result: "-",
     },
     {
-      id: "C011124",
-      name: "김철수",
-      userId: "kimcs99",
-      phone: "010-2222-3333",
-      status: "정상",
-      joinDate: "2024-07-01",
-      banEndDate: "-",
-      action: "-",
+      id: "042",
+      reportDate: "2024-11-24",
+      reporterId: "wsj11029",
+      reportedId: "kimjuns00",
+      content: "노쇼 신고",
+      status: "처리 전",
+      completedDate: "-",
+      result: "-",
     },
   ];
+
+  const handleInputChange = (index: number, value: string) => {
+    const key = fieldNames[index];
+    setSearchParams((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleSearchClick = () => {
+    // 나중에 API 트리거 연동
+  };
 
   return (
     <Container>
@@ -54,8 +64,22 @@ export default function NoshowReportPage() {
           ]}
         />
         <InnerContainer>
-          <SearchBox titles={["신고자 :", "신고 대상 :"]} />
-          <Table columns={columns} data={data} />
+          <SearchBox
+            titles={["신고자 :", "신고 대상 :"]}
+            inputValues={fieldNames.map(
+              (name) => searchParams[name as keyof typeof searchParams]
+            )}
+            onInputChange={handleInputChange}
+            onSearchClick={handleSearchClick}
+          />
+          <Table
+            columns={reportColumns}
+            data={data.map((row) => ({
+              ...row,
+              createdAt: formatDate(row.completedDate),
+            }))}
+            renderCell={renderReportCell}
+          />
         </InnerContainer>
       </ContentContainer>
     </Container>

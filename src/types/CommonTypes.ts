@@ -13,17 +13,6 @@ export interface WineDataTypes {
   action2: string;
 }
 
-export interface TitledWineDataTypes {
-  id: string;
-  name: string;
-  sort: string;
-  region: string;
-  country: string;
-  date: string;
-  action1: string;
-  action2: string;
-}
-
 export interface UserDataTypes {
   id: string;
   name: string;
@@ -47,7 +36,30 @@ export interface WineRow {
   wineId: string;
   name: string;
   sort: string;
-  variety: string;
+  region: string;
   country: string;
+  variety: string;
   createdAt: string;
+}
+
+export interface UserRow {
+  id: string;
+  userNum: string;
+  name: string;
+  userId: string;
+  phone: string;
+  status: string;
+  createdAt: string;
+  banEndDate: string;
+}
+
+export interface ReportRow {
+  id: string;
+  reportDate: string;
+  reporterId: string;
+  reportedId: string;
+  content: string;
+  status: string;
+  completedDate: string;
+  result: string;
 }
