@@ -1,4 +1,4 @@
-import { UserDetailDataTypes } from "../../types/CommonTypes";
+import { UserDetailDataTypes } from "../types/CommonTypes";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -13,6 +13,13 @@ export default function UserDetailContent() {
   const typeOptions = ["정상", "휴면", "활동 정지", "모임 정지"];
 
   const [selectedSort, setSelectedSort] = useState<string>(user.status);
+  const [activityYear, setActivityYear] = useState(user.activityDate);
+  const [activityMonth, setActivityMonth] = useState("");
+  const [activityDay, setActivityDay] = useState("");
+
+  const [gatheringYear, setGatheringYear] = useState(user.gatheringDate);
+  const [gatheringMonth, setGatheringMonth] = useState("");
+  const [gatheringDay, setGatheringDay] = useState("");
 
   // 종류 버튼 클릭 핸들러
   const handleTypeSelect = (type: string) => {
@@ -42,40 +49,46 @@ export default function UserDetailContent() {
           <DateContainer>
             <InputBox
               name="activityDate"
-              value={user.activityDate}
+              value={activityYear}
               placeholder="0000"
+              onChange={(e) => setActivityYear(e.target.value)}
             />
             <div>년</div>
             <InputBox
               name="activityDate"
-              value={user.activityDate}
+              value={activityMonth}
               placeholder="0000"
+              onChange={(e) => setActivityMonth(e.target.value)}
             />
             <div>월</div>
             <InputBox
               name="activityDate"
-              value={user.activityDate}
+              value={activityDay}
               placeholder="0000"
+              onChange={(e) => setActivityDay(e.target.value)}
             />
             <div>일 까지</div>
           </DateContainer>
           <DateContainer>
             <InputBox
               name="gatheringDate"
-              value={user.gatheringDate}
+              value={gatheringYear}
               placeholder="0000"
+              onChange={(e) => setGatheringYear(e.target.value)}
             />
             <div>년</div>
             <InputBox
               name="gatheringDate"
-              value={user.gatheringDate}
+              value={gatheringMonth}
               placeholder="0000"
+              onChange={(e) => setGatheringMonth(e.target.value)}
             />
             <div>월</div>
             <InputBox
               name="gatheringDate"
-              value={user.gatheringDate}
+              value={gatheringDay}
               placeholder="0000"
+              onChange={(e) => setGatheringDay(e.target.value)}
             />
             <div>일 까지</div>
           </DateContainer>

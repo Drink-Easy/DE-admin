@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import HeaderLayout from "./HeaderLayout";
 import { BtnWrapper } from "../../../styles/GlobalStyle";
 
-export default function Header() {
+export default function MainHeader() {
   const navigate = useNavigate();
   return (
     <HeaderLayout logoText="Drinki G" onLogoClick={() => navigate("/")}>

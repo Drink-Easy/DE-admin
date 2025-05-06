@@ -23,6 +23,6 @@ export function renderReportCell(
     case "처리결과":
       return row.result;
     default:
-      return "";
+      return "-";
   }
 }
