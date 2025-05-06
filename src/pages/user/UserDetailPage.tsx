@@ -1,59 +1,58 @@
 import styled from "styled-components";
-import DetailHeader from "../../components/common/Header/DetailHeader";
-import SideBar from "../../components/common/SideBar";
 import Table from "../../components/common/Table";
-import { UserDataTypes } from "../../types/CommonTypes";
+import UserDetailContent from "../../components/UserDetailContent";
+import { useNavigate } from "react-router-dom";
 import { userColumns } from "../../constants/constants";
-import UserDetailContent from "./UserDetailContent";
-import AdminHeader from "../../components/common/Header/AdminHeader";
+import { renderUserCell } from "../../utils/renderUserCell";
+import { formatDate } from "../../utils/formatDate";
+import { UserRow } from "../../types/CommonTypes";
 
 export default function UserDetailPage() {
+  const navigate = useNavigate();
+
   //추후 api로 개별 유저 조회 예정이라 정적 데이터
-  const data: UserDataTypes[] = [
+  const data: UserRow[] = [
     {
-      id: "C011123",
-      name: "위승주",
-      userId: "wsj11029",
-      phone: "010-3655-5641",
+      id: "kimcs99",
+      userNum: "C011124",
+      name: "김철수",
+      userId: "kimcs99",
+      phone: "010-2222-3333",
       status: "정상",
-      joinDate: "2024-09-03",
-      banEndDate: "-",
-      action: "-",
+      createdAt: "2025-05-05T15:51:39.535Z",
+      banEndDate: "2025-05-05T15:51:39.535Z",
     },
   ];
+
+  const handleRowClick = (id: string) => {
+    navigate(`/user/${id}`);
+  };
+
   return (
     <Container>
-      <AdminHeader />
-      <DetailHeader />
-      <ContentContainer>
-        <SideBar
-          title="회원정보 관리"
-          menuItems={[{ text: "회원 조회", path: "/user" }]}
-        />
-        <InnerContainer>
-          <Table columns={userColumns} data={data} />
-          <StyledWrapper>
-            <UserDetailContent />
-          </StyledWrapper>
-        </InnerContainer>
-      </ContentContainer>
+      <Table
+        columns={userColumns}
+        data={data.map((user) => ({
+          id: user.userId,
+          userNum: user.userNum,
+          name: user.name,
+          userId: user.userId,
+          phone: user.phone,
+          status: user.status,
+          createdAt: formatDate(user.createdAt),
+          banEndDate: formatDate(user.banEndDate),
+        }))}
+        onRowClick={handleRowClick}
+        renderCell={renderUserCell}
+      />
+      <StyledWrapper>
+        <UserDetailContent />
+      </StyledWrapper>
     </Container>
   );
 }
+
 const Container = styled.div`
-  width: 100%;
-  height: 102.4rem;
-  background-color: ${({ theme }) => theme.colors.white};
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 4.9rem;
-  padding: 3.5rem 5rem 0rem 7.6rem;
-`;
-
-const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;

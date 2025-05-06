@@ -1,4 +1,4 @@
-import { UserDetailDataTypes } from "../../types/CommonTypes";
+import { UserDetailDataTypes } from "../types/CommonTypes";
 import { useState } from "react";
 import styled from "styled-components";
 
